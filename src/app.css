@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+    font-family:"Raleway";
+}
+
+h1{
+    font-size: 30px;
+font-weight: bold;
+
+}
+h2{
+    font-size: 20px;
+    font-weight: bold;
+
+}
+
+
+.ActivityCardElem {
+    @apply  hoverClick    bg-gray-200 bg-opacity-40  ;
+
+}
+
+
+
+a, b ,*,.unselectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.cursorSelect {cursor: pointer;}
+
+@layer components {
+    .mrkCard {
+        @apply  overflow-hidden float-left bg-gray-300 bg-opacity-60 h-fit m-1 min-w-fit flex-col rounded-2xl shadow  shadow-lg;
+
+    }
+    .hoverClick{
+        @apply active:brightness-90  hover:brightness-110 cursor-pointer
+    }
+
+}
+.mrkCard {
+   min-width: 10rem;
+}
+
+
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}

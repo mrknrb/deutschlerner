@@ -1,0 +1,42 @@
+{
+	"/": [],
+	"/api/delete.json": [
+		"src/routes/api/delete.json/+server.ts"
+	],
+	"/api/load.json": [
+		"src/routes/api/load.json/+server.ts"
+	],
+	"/api/loadsearch.json": [
+		"src/routes/api/loadsearch.json/+server.ts"
+	],
+	"/api/save.json": [
+		"src/routes/api/save.json/+server.ts"
+	],
+	"/browser": [],
+	"/editor": [],
+	"/fb": [
+		"src/routes/fb/+server.ts"
+	],
+	"/handbook": [],
+	"/login": [],
+	"/signup": [],
+	"/usersettings": [],
+	"/index": [],
+	"/app": [],
+	"/pages/signup": [],
+	"/pages/login": [],
+	"/pages/usersettings": [],
+	"/pages/user/usersettings": [],
+	"/pages/user/signup": [],
+	"/pages/user/login": [],
+	"/pages/dict": [],
+	"/i.json": [
+		"src/routes/i.json/+server.ts"
+	],
+	"/i": [
+		"src/routes/i/+server.ts"
+	],
+	"/pages/dict/apiServer/i": [
+		"src/routes/pages/dict/apiServer/i/+server.ts"
+	]
+}
