@@ -5,7 +5,7 @@
 	import { WordFieldsStatic } from './data/static/WordFieldsStatic';
 
 let total:any[]=[]
-	onMount(async () => {
+/*	onMount(async () => {
 			const response = await fetch('/pages/dict/apiServer/i', {
 			method: 'get',
 			headers: {
@@ -16,7 +16,7 @@ let total:any[]=[]
 		 total = await response.json()
 		console.log(total);
 
-	});
+	});*/
 </script>
 
 <WordTable data={total} fields={WordFieldsStatic}/>
