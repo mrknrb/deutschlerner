@@ -1,4 +1,4 @@
-export enum  fieldTypes  {
+export enum  FieldTypes  {
     number= "number",
     string="string",
 list="list"

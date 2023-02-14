@@ -26,6 +26,8 @@
  * ```
  */
 declare module '$env/static/private' {
+	export const VITE_SUPABASE_URL: string;
+	export const VITE_SUPABASE_ANON_KEY: string;
 	export const ADSK_3DSMAX_x64_2016: string;
 	export const ADSK_CLM_WPAD_PROXY_CHECK: string;
 	export const ALLUSERSPROFILE: string;
@@ -153,6 +155,8 @@ declare module '$env/static/public' {
  */
 declare module '$env/dynamic/private' {
 	export const env: {
+		VITE_SUPABASE_URL: string;
+		VITE_SUPABASE_ANON_KEY: string;
 		ADSK_3DSMAX_x64_2016: string;
 		ADSK_CLM_WPAD_PROXY_CHECK: string;
 		ALLUSERSPROFILE: string;

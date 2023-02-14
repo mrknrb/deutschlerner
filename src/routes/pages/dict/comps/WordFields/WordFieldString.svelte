@@ -6,7 +6,7 @@ export let data:any
 </script>
 
 
-<td>
-    <input value= {JSON.stringify (data)} >
-    
-   </td>
+<p  class="w-full">
+    { data}
+
+</p>

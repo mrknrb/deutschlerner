@@ -29,6 +29,6 @@
 	</div>
 </header>
 
-<div class="justify-center m-auto">
+<div class="justify-center m-auto relative flex flex-col">
 	<slot />
 </div>
