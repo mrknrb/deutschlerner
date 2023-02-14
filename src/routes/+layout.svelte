@@ -13,8 +13,8 @@
 	</style>
 </svelte:head>
 
-<header class=" sticky ">
-	<div style="height: 50px" class="  flex flex-row overflow-hidden">
+<header class=" relative " style="flex: 0 1 50px">
+	<div  class="  flex flex-row overflow-hidden">
 		<div
 			class="h-full  w-24  flex flex-row justify-center flex-wrap content-center hover:backdrop-brightness-110"
 			on:click={() => {
@@ -29,6 +29,6 @@
 	</div>
 </header>
 
-<div class="justify-center m-auto relative flex flex-col">
+<div class="  relative flex flex-col " style="flex: 1 1 auto">
 	<slot />
 </div>

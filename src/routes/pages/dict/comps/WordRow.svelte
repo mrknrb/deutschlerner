@@ -8,11 +8,19 @@
 
 	export let fields: fieldBasic[] = [];
    console.log("megy");
-   
+ /*  $: szingenerator=(field:fieldBasic)=>{
+       if (!field?.szinek||!word[field.name])return
+
+       let a = field?.szinek?.find((l)=>{l.fieldValue===word[field.name]})
+       if(a) {
+           console.log(a)
+       }
+return a
+   }*/
 </script>
 <tr class="bg-gray-300 h-10  border-indigo-500 border-solid border-4 align-top">
 {#each fields as field}
-    <td>
+    <td >
 
         {#if word[field.name]}
 

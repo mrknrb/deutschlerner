@@ -6,7 +6,7 @@ export let data:any
 </script>
 
 
-<p  class="w-full">
+<p  class="w-full font-bold">
     { data}
 
 </p>

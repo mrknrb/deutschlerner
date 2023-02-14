@@ -4,4 +4,5 @@ export interface fieldBasic{
     name: string
     type:FieldTypes
     size?:number
+    szinek?: { fieldValue:string,szin:string }[]
 }
