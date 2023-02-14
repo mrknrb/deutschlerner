@@ -6,7 +6,6 @@
 		"build": "vite build",
 		"package": "vite package",
 		"preview": "vite preview",
-
 		"hahahaha": "a prepare parancsot torold ki, kulonben nem buildeli a vercelben",
 		"test": "playwright test",
 		"check": "svelte-check --tsconfig ./tsconfig.json",

@@ -2,7 +2,7 @@ import { writable } from 'svelte/store';
 import * as queryString from "querystring";
 import {Word} from "../../data/types/Word";
 import {supabase} from "../../../../../lib/supabaseClient";
-import {FilterStoreValue} from "../FilterStore/FilterStore";
+import {FilterStoreCommands, FilterStoreValue} from "../FilterStore/FilterStore";
 
 export type WordsStoreType = {
     szavak?:Word[]
@@ -44,7 +44,13 @@ if(!data)return
 
 };
 
+let refreshWordsFromURL =async () => {
+   FilterStoreCommands. updateFilterFromURL()
+
+    refreshWords()
+
+};
 
 export let WordsStoreCommands = {
-    refreshWords
+    refreshWords,refreshWordsFromURL
 };

@@ -16,5 +16,6 @@ igekoto="igekoto",
     habensein="habensein",
     elvalos="elvalos",
     angol="angol",
-    szinonima="szinonima"
+    szinonima="szinonima",
+    tudasszint="tudasszint"
 }

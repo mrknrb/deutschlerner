@@ -19,8 +19,11 @@ return a
    }*/
 </script>
 <tr class="bg-gray-300 h-10  border-indigo-500 border-solid border-4 align-top">
-{#each fields as field}
-    <td >
+{#each fields as field,o}
+    <td on:click={()=>{
+        fields[o]?.clickAction(word)
+
+    }}>
 
         {#if word[field.name]}
 
