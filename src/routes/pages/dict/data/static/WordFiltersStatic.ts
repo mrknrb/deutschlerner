@@ -8,20 +8,20 @@ import { FilterTypeEnums } from '../enums/FilterTypeEnums';
 
 export const WordFiltersStatic: FilterStaticType[] = [
 	{
-		name: FilterNameEnums.arg_tudasszint,
-		type: FilterTypeEnums.text
-	},
-	{
 		name: FilterNameEnums.arg_szo,
-		type: FilterTypeEnums.text
-	},
-	{
-		name: FilterNameEnums.arg_idszinonimai,
 		type: FilterTypeEnums.text
 	},
 	{
 		name: FilterNameEnums.arg_szogyujtes,
 		type: FilterTypeEnums.button
+	},
+	{
+		name: FilterNameEnums.arg_tudasszint,
+		type: FilterTypeEnums.text
+	},
+	{
+		name: FilterNameEnums.arg_idszinonimai,
+		type: FilterTypeEnums.text
 	},
 	{
 		name: FilterNameEnums.arg_szint,

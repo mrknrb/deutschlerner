@@ -23,13 +23,13 @@
 	});
 </script>
 
-<div style="flex: 0 1 50px" class=" relative flex flex-row ">
-	<button
+<div style="flex: 0 1 50px" class=" relative flex flex-row overflow-auto">
+<!--	<button
 		class="bg-green-300 p-4"
 		on:click={() => {
 			WordsStoreCommands.refreshWords();
 		}}>Refresh</button
-	>
+	>-->
 	{#each WordFiltersStatic as filter, i}
 		<!--<p class="font-bold">{WordFiltersStatic[i].name}</p>
 		<input

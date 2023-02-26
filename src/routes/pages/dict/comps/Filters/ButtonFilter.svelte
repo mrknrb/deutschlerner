@@ -12,7 +12,7 @@
 		type="button"
 		on:click
 		value={FilterData.name}
-		class="hoverClick {FilterValue?'bg-green-700':'bg-red-700'} h-full"
+		class="hoverClick {FilterValue?'bg-green-700':'bg-gray-500'} h-full border-4 border-gray-800"
 		on:click={(e) => {
 			FilterStoreCommands.updateURL((old) => {
 				//oiu.set(	old,filterName,filterTextValue)

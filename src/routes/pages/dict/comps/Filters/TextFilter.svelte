@@ -7,21 +7,15 @@
     export let FilterData:FilterStaticType
     export let FilterValue=""
 
-</script><!--
-<div class="">
-    <a>{FilterData.name}</a>
-<input type="text" on:change value={FilterData.value?FilterData.value:""} >
-  &lt;!&ndash;  <input type="button" value="delete" on:click>&ndash;&gt;
+</script>
+<div class="flex flex-col w-32">
 
-</div>
--->
-
-<p class="font-bold">{FilterData.name}</p>
-<input
-        type="text"
-        class="bg-green-700 h-full w-52 text-xl"
-        value={FilterValue||""  }
-        on:change={(e) => {
+    <b class="font-bold text-xs">{FilterData.name}</b>
+    <input
+            type="text"
+            class="bg-green-700 h-full  text-xl"
+            value={FilterValue||""  }
+            on:change={(e) => {
 				FilterStoreCommands.updateURL((old) => {
 					//oiu.set(	old,filterName,filterTextValue)
 					//let a = oiu.create();
@@ -30,4 +24,5 @@
 					return old
 				});
 			}}
-/>
+    />
+</div>
