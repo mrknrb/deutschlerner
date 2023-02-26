@@ -25,7 +25,7 @@ return a
 
     }}>
 
-        {#if word[field.name]}
+        {#if word[field.name]!==undefined&&word[field.name]!==null}
 
             {#if field.type===FieldTypes.string}
 

@@ -50,7 +50,9 @@ declare module '$env/static/private' {
 	export const FPS_BROWSER_APP_PROFILE_STRING: string;
 	export const FPS_BROWSER_USER_PROFILE_STRING: string;
 	export const GATEWAY_VM_OPTIONS: string;
+	export const GoLand: string;
 	export const GOLAND_VM_OPTIONS: string;
+	export const GOPATH: string;
 	export const GTK_BASEPATH: string;
 	export const HOME: string;
 	export const HOMEDRIVE: string;
@@ -179,7 +181,9 @@ declare module '$env/dynamic/private' {
 		FPS_BROWSER_APP_PROFILE_STRING: string;
 		FPS_BROWSER_USER_PROFILE_STRING: string;
 		GATEWAY_VM_OPTIONS: string;
+		GoLand: string;
 		GOLAND_VM_OPTIONS: string;
+		GOPATH: string;
 		GTK_BASEPATH: string;
 		HOME: string;
 		HOMEDRIVE: string;

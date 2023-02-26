@@ -5,9 +5,13 @@
 	import { WordFieldsStatic } from './data/static/WordFieldsStatic';
 	import { supabase } from '../../../lib/supabaseClient';
 	import { WordsStore, WordsStoreCommands } from './apiClient/WordsStore/WordsStore';
-	import { FilterStore, FilterStoreCommands } from './apiClient/FilterStore/FilterStore';
+	import {FilterStore, FilterStoreCommands, FilterStoreValue} from './apiClient/FilterStore/FilterStore';
 	import TextFilter from './comps/Filters/TextFilter.svelte';
 	import ButtonFilter from './comps/Filters/ButtonFilter.svelte';
+	import FilterGenerator from './comps/Filters/FilterGenerator.svelte';
+	import { WordFiltersStatic } from './data/static/WordFiltersStatic';
+	import { FilterNameEnums } from './data/enums/FilterNameEnums';
+	import { oiu } from '../../../Egyebek/oiu';
 
 	let data: any[] = [];
 	onMount(() => {
@@ -21,45 +25,31 @@
 
 <div style="flex: 0 1 50px" class=" relative flex flex-row ">
 	<button
-		class="bg-green-30 p-4"
+		class="bg-green-300 p-4"
 		on:click={() => {
 			WordsStoreCommands.refreshWords();
 		}}>Refresh</button
 	>
-	<TextFilter
-		FilterData={{ value: $FilterStore.arg_szo, name: 'szo' }}
-		on:change={(e) => {
-			FilterStoreCommands.updateURL((old) => {
-				old.arg_szo = e.target.value;
-				return old;
-			});
-		}}
-	/>
-	<TextFilter
-		FilterData={{ value: $FilterStore.arg_idszinonimai, name: 'szinonimai' }}
-		on:change={(e) => {
-			FilterStoreCommands.updateURL((old) => {
-				let ures = {};
-				ures.arg_idszinonimai = e.target.value;
-				return ures;
-			});
-		}}
-	/>
-	<ButtonFilter
-		FilterData={{ name: 'tanulando' }}
-		on:click={(e) => {
-			FilterStoreCommands.updateURL((old) => {
-				if (old.arg_tanulando) {
-					delete old.arg_tanulando;
-				} else {
-					old={}
-					old.arg_tanulando = true;
-				}
+	{#each WordFiltersStatic as filter, i}
+		<!--<p class="font-bold">{WordFiltersStatic[i].name}</p>
+		<input
+			type="text"
+			class="bg-green-700 h-full w-52 text-xl"
+			value={oiu.get($FilterStore,WordFiltersStatic[i].name)||""  }
+			on:change={(e) => {
+				FilterStoreCommands.updateURL((old) => {
+					//oiu.set(	old,filterName,filterTextValue)
+					//let a = oiu.create();
 
-				return old;
-			});
-		}}
-	/>
+					oiu.set(old, WordFiltersStatic[i].name, e.target.value);
+					return old
+				});
+			}}
+		/>-->
+		<FilterGenerator FilterData={WordFiltersStatic[i]} FilterValue={oiu.get($FilterStore,WordFiltersStatic[i].name)}></FilterGenerator>
+
+	{/each}
+
 </div>
 
 <div style="flex: 1 1 auto" class=" relative flex flex-row ">

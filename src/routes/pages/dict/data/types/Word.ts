@@ -1,8 +1,8 @@
-import {WordSzintek} from "../enums/WordSzintek";
+import { WordSzintek } from '../enums/WordSzintek';
 
 export interface Word {
-    szo:string
-    szint?:WordSzintek
-id:string
-
+	szo: string;
+	szint?: WordSzintek;
+	id: string;
+	tudasszint: number;
 }
