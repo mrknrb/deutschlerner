@@ -1,26 +1,51 @@
 import { FieldTypes } from '../enums/fieldTypes';
 import { fieldBasic } from '../types/fieldBasic';
 import { WordFields } from '../enums/WordFields';
-import {
-	FilterStoreCommands,
-	FilterStoreType,
-	FilterStoreValue
-} from '../../apiClient/FilterStore/FilterStore';
+import { FilterStoreCommands, FilterStoreType } from '../../apiClient/FilterStore/FilterStore';
 import { supabase } from '../../../../../lib/supabaseClient';
 import { WordsStore, WordsStoreCommands } from '../../apiClient/WordsStore/WordsStore';
 import { tudasszintNovelo } from '../../apiClient/WordsStore/DictFunctions';
+import { WordSzintek } from '../enums/WordSzintek';
+import { WordNevelok } from '../enums/WordNevelok';
 
 export const WordFieldsStatic: fieldBasic[] = [
 	{
 		name: WordFields.szint,
 		type: FieldTypes.string,
 		size: 2,
-		szinek: [{ fieldValue: '22', szin: 'bg-green-500' }]
+		szin: (word) => {
+			console.log(typeof word.szint);
+			switch (word.szint) {
+				case WordSzintek.a1:
+					return 'bg-blue-500';
+					break;
+				case WordSzintek.c2:
+					return 'bg-red-500';
+					break;
+				default:
+					return 'bg-gray-500';
+			}
+		}
 	},
 
 	{ name: WordFields.tudasszint, type: FieldTypes.string, size: 2 },
 	{
 		name: WordFields.szo,
+		szin: (word) => {
+			switch (word.nevelo) {
+				case WordNevelok.der:
+					return 'bg-gray-500';
+					break;
+				case WordNevelok.die:
+					return 'bg-red-500';
+					break;
+				case WordNevelok.das:
+					return 'bg-yellow-500';
+					break;
+				default:
+					return '';
+			}
+		},
 		type: FieldTypes.string,
 		clickAction: async (data) => {
 			let tudasszint = tudasszintNovelo(data.tudasszint);
@@ -45,6 +70,7 @@ export const WordFieldsStatic: fieldBasic[] = [
 	},
 	{ name: WordFields.jelentes, type: FieldTypes.list, size: 15 },
 	{ name: WordFields.angol, type: FieldTypes.list },
+	{ name: WordFields.magyar, type: FieldTypes.list },
 	{
 		name: WordFields.szinonima,
 		type: FieldTypes.list,
@@ -56,6 +82,14 @@ export const WordFieldsStatic: fieldBasic[] = [
 			});
 		}
 	},
+	{ name: WordFields.antonima, type: FieldTypes.list },
+	{ name: WordFields.sentences, type: FieldTypes.list },
+	{ name: WordFields.objects, type: FieldTypes.list },
+
+	{ name: WordFields.prepoziciok, type: FieldTypes.list },
+
+	{ name: WordFields.modal, type: FieldTypes.list },
+	{ name: WordFields.attributes, type: FieldTypes.list },
 	{ name: WordFields.nevelo, type: FieldTypes.string },
 	{ name: WordFields.szofaj, type: FieldTypes.string, size: 5 },
 	{ name: WordFields.igekoto, type: FieldTypes.string },

@@ -17,6 +17,14 @@
        }
 return a
    }*/
+    function szin(o:number,word){
+      if (!fields[o].szin)return ""
+       return fields[o].szin(word)
+
+    }
+
+
+
 </script>
 <tr class="bg-gray-300 h-10  border-indigo-500 border-solid border-4 align-top">
 {#each fields as field,o}
@@ -29,7 +37,7 @@ return a
 
             {#if field.type===FieldTypes.string}
 
-                <WordFieldString  data={word[field.name]}> </WordFieldString>
+                <WordFieldString szin={szin(o,word) }  data={word[field.name]}> </WordFieldString>
 
             {:else if  field.type===FieldTypes.list}
 

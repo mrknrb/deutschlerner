@@ -1,5 +1,5 @@
 export function tudasszintNovelo(elozoSzint?: number) {
-	if (elozoSzint === undefined) return 1;
+	if (elozoSzint === null) return 0;
 	if (elozoSzint < 4) {
 		return elozoSzint + 1;
 	} else {
