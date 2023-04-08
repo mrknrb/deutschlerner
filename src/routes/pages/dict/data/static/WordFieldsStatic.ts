@@ -131,7 +131,7 @@ export const WordFieldsStatic: fieldBasic[] = [
 			);
 		}
 	},
-	//{ name: WordFields.kozosszoto, type: FieldTypes.listCompact, size: 50 },
+	//{ name: WordFields.kozosszoto, type: FieldTypes.list, size: 50 },
 	{ name: WordFields.magyar, type: FieldTypes.list },
 	//{ name: WordFields.sentences, type: FieldTypes.list },
 
