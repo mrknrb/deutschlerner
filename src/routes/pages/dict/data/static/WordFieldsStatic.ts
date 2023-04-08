@@ -40,13 +40,13 @@ export const WordFieldsStatic: fieldBasic[] = [
 		szin: (word) => {
 			switch (word.nevelo) {
 				case WordNevelok.der:
-					return 'bg-gray-500';
+					return 'bg-gray-400';
 					break;
 				case WordNevelok.die:
-					return 'bg-red-500';
+					return 'bg-red-300';
 					break;
 				case WordNevelok.das:
-					return 'bg-yellow-500';
+					return 'bg-yellow-300';
 					break;
 				default:
 					return '';
@@ -130,6 +130,7 @@ export const WordFieldsStatic: fieldBasic[] = [
 			);
 		}
 	},
+	//{ name: WordFields.kozosszoto, type: FieldTypes.listCompact, size: 50 },
 	{ name: WordFields.magyar, type: FieldTypes.list },
 	//{ name: WordFields.sentences, type: FieldTypes.list },
 

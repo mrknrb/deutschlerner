@@ -21,19 +21,19 @@ $:data2=data.sort(function (a, b) {
 
     })}*/
 	let colors = {
-		a: 'bg-red-500',
-		b: 'bg-blue-500',
-		c: 'bg-yellow-500',
-		z: 'bg-green-500',
-		d: 'bg-purple-500',
-		e: 'bg-pink-500',
-		f: 'bg-brown-500'
+		a: 'bg-red-300',
+		b: 'bg-blue-300',
+		c: 'bg-yellow-300',
+		z: 'bg-green-300',
+		d: 'bg-purple-300',
+		e: 'bg-pink-300',
+		f: 'bg-brown-300'
 	};
 </script>
 
 {#each data2 as d, i}
 	{#if data2[i]}
 
-		<p class="w-full font-bold {colors[data2[i].numbers]} mb-0.5 p-0.5">{data2[i]?.text ??data2[i]} </p>
+		<a class="w-full font-bold {colors[data2[i].numbers]} rounded mr-2 p-1">{data2[i]?.text ??data2[i]} </a>
 	{/if}
 {/each}

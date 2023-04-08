@@ -4,6 +4,7 @@
 	import WordFieldString from './WordFields/WordFieldString.svelte';
     import {Word} from "../data/types/Word";
     import WordFieldList from "./WordFields/WordFieldList.svelte"
+    import WordFieldListCompact from "./WordFields/WordFieldListCompact.svelte"
 	export let word: Word;
 
 	export let fields: fieldBasic[] = [];
@@ -43,6 +44,13 @@ return a
 
 
                 <WordFieldList  data={word[field.name]}> </WordFieldList>
+
+
+                <!-- else if content here -->
+            {:else if  field.type===FieldTypes.listCompact}
+
+
+                <WordFieldListCompact  data={word[field.name]}> </WordFieldListCompact>
 
 
                 <!-- else if content here -->

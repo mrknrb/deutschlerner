@@ -7,15 +7,13 @@
  export let words:Word[]=[]
    
 </script>
-<div class="absolute top-0 left-0 bottom-0 right-0 overflow-auto">
-
-
+<div class="overflow-auto absolute top-0 left-0 bottom-0 right-0 ">
    <table class="w-fit  table-fixed ">
-      <thead class="  ">
+      <thead class=" sticky ">
       {#each fields as field,i}
 
          <td
-                 style='width: { fields[i].size?fields[i].size:"12"}rem'>
+                 style='width: { fields[i].size?fields[i].size:"16"}rem'>
             {fields[i].name}
 
 
@@ -28,6 +26,7 @@
 
 
    </table>
+
 
 
 </div>
