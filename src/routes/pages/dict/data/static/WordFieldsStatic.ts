@@ -111,7 +111,6 @@ export const WordFieldsStatic: fieldBasic[] = [
 			}, 2000);
 		}
 	},
-	{ name: WordFields.magyar, type: FieldTypes.list },
 	{
 		name: WordFields.szinonima,
 		type: FieldTypes.list,
@@ -121,7 +120,17 @@ export const WordFieldsStatic: fieldBasic[] = [
 			window.open('dict?' + queryString.stringify(filter), '_blank');
 		}
 	},
-	{ name: WordFields.antonima, type: FieldTypes.list },
+	{
+		name: WordFields.antonima,
+		type: FieldTypes.list,
+		clickAction: (data) => {
+			window.open(
+				'https://www.linguee.com/english-german/search?source=german&query=' + data.szo,
+				'_blank'
+			);
+		}
+	},
+	{ name: WordFields.magyar, type: FieldTypes.list },
 	//{ name: WordFields.sentences, type: FieldTypes.list },
 
 	{ name: WordFields.ismetlesdatum, type: FieldTypes.string },
