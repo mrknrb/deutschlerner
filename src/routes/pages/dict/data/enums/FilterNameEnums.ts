@@ -6,5 +6,6 @@ export enum FilterNameEnums {
 	arg_tudasszint = 'arg_tudasszint',
 	arg_szogyujtes = 'arg_szogyujtes',
 	arg_szint = 'arg_szint',
-	arg_szinonimatudasszint = 'arg_szinonimatudasszint'
+	arg_szinonimatudasszint = 'arg_szinonimatudasszint',
+	arg_szinonimafilter = 'arg_szinonimafilter'
 }

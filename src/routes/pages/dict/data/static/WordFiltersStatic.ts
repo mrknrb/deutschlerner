@@ -20,6 +20,10 @@ export const WordFiltersStatic: FilterStaticType[] = [
 		type: FilterTypeEnums.text
 	},
 	{
+		name: FilterNameEnums.arg_szinonimafilter,
+		type: FilterTypeEnums.button
+	},
+	{
 		name: FilterNameEnums.arg_szinonimatudasszint,
 		type: FilterTypeEnums.text
 	},
