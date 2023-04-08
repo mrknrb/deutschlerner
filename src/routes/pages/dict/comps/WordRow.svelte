@@ -7,7 +7,7 @@
 	export let word: Word;
 
 	export let fields: fieldBasic[] = [];
-   console.log("megy");
+
  /*  $: szingenerator=(field:fieldBasic)=>{
        if (!field?.szinek||!word[field.name])return
 

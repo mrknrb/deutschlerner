@@ -42,7 +42,7 @@ let refreshWords = async () => {
 let refreshOneWord = async (id: string) => {
 	//  const { data, error } = await supabase.from('szavak').select().    limit(100)
 	console.log(FilterStoreValue);
-	let { data, error } = await supabase.rpc('szoget', { arg_id: id });
+	let { data, error } = await supabase.rpc('szoquery', { arg_id: id });
 
 	console.log(data);
 	console.log(error);

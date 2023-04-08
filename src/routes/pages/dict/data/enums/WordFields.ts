@@ -25,5 +25,7 @@ export enum WordFields {
 	modal = 'modal',
 	objects = 'objects',
 
-	prepoziciok = 'prepoziciok'
+	prepoziciok = 'prepoziciok',
+	szinonimatudasszint = 'szinonimatudasszint',
+	ismetlesdatum = 'ismetlesdatum'
 }

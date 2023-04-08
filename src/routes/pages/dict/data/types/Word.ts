@@ -7,4 +7,6 @@ export interface Word {
 	id: string;
 	tudasszint: number;
 	nevelo: WordNevelok;
+
+	szinonimatudasszint: number;
 }
