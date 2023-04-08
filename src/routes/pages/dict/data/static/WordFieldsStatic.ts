@@ -37,6 +37,7 @@ export const WordFieldsStatic: fieldBasic[] = [
 	{ name: WordFields.szinonimatudasszint, type: FieldTypes.string, size: 2 },
 	{
 		name: WordFields.szo,
+		size: 9,
 		szin: (word) => {
 			switch (word.nevelo) {
 				case WordNevelok.der:
@@ -136,10 +137,10 @@ export const WordFieldsStatic: fieldBasic[] = [
 
 	{ name: WordFields.ismetlesdatum, type: FieldTypes.string },
 
-	{ name: WordFields.objects, type: FieldTypes.list },
-	{ name: WordFields.prepoziciok, type: FieldTypes.list },
-	{ name: WordFields.modal, type: FieldTypes.list },
-	{ name: WordFields.attributes, type: FieldTypes.list },
+	{ name: WordFields.objects, type: FieldTypes.list, size: 30 },
+	{ name: WordFields.prepoziciok, type: FieldTypes.list, size: 30 },
+	{ name: WordFields.modal, type: FieldTypes.list, size: 30 },
+	{ name: WordFields.attributes, type: FieldTypes.list, size: 30 },
 	{ name: WordFields.nevelo, type: FieldTypes.string },
 	{ name: WordFields.szofaj, type: FieldTypes.string, size: 5 },
 

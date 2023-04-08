@@ -6,7 +6,7 @@ export let data:any
 </script>
 
 
-<p  class="w-full font-bold {szin}">
+<p  class="w-full font-bold {szin} break-words">
     { data}
 
 </p>
