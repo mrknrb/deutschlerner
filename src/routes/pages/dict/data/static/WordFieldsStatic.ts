@@ -132,18 +132,18 @@ export const WordFieldsStatic: fieldBasic[] = [
 		}
 	},
 	//{ name: WordFields.kozosszoto, type: FieldTypes.list, size: 50 },
-	{ name: WordFields.magyar, type: FieldTypes.list },
 	//{ name: WordFields.sentences, type: FieldTypes.list },
 
-	{ name: WordFields.ismetlesdatum, type: FieldTypes.string },
+	{ name: WordFields.magyar, type: FieldTypes.list },
 
+	{ name: WordFields.ismetlesdatum, type: FieldTypes.string },
 	{ name: WordFields.objects, type: FieldTypes.list, size: 30 },
 	{ name: WordFields.prepoziciok, type: FieldTypes.list, size: 30 },
 	{ name: WordFields.modal, type: FieldTypes.list, size: 30 },
 	{ name: WordFields.attributes, type: FieldTypes.list, size: 30 },
 	{ name: WordFields.nevelo, type: FieldTypes.string },
-	{ name: WordFields.szofaj, type: FieldTypes.string, size: 5 },
 
+	{ name: WordFields.szofaj, type: FieldTypes.string, size: 5 },
 	{ name: WordFields.igekoto, type: FieldTypes.string },
 	{ name: WordFields.id, type: FieldTypes.string },
 	{ name: WordFields.szoto, type: FieldTypes.string },
