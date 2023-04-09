@@ -14,7 +14,7 @@ export const WordFiltersStatic: FilterStaticType[] = [
 	{
 		name: FilterNameEnums.arg_tudasszint,
 		type: FilterTypeEnums.dropdown,
-		staticData: ['', 0, 1, 2, 3, 4]
+		staticData: ['', '0', '1', '2', '3', '4']
 	},
 	{
 		name: FilterNameEnums.arg_szinonimafilter,
@@ -23,7 +23,7 @@ export const WordFiltersStatic: FilterStaticType[] = [
 	{
 		name: FilterNameEnums.arg_szinonimatudasszint,
 		type: FilterTypeEnums.dropdown,
-		staticData: ['', 0, 1, 2, 3, 4]
+		staticData: ['', '0', '1', '2', '3', '4']
 	},
 	{
 		name: FilterNameEnums.arg_szint,
