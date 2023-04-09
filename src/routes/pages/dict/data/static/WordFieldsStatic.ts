@@ -22,10 +22,22 @@ export const WordFieldsStatic: fieldBasic[] = [
 			//console.log(typeof word.szint);
 			switch (word.szint) {
 				case WordSzintek.a1:
-					return 'bg-blue-500';
+					return 'bg-green-300';
+					break;
+				case WordSzintek.a2:
+					return 'bg-green-300';
+					break;
+				case WordSzintek.b1:
+					return 'bg-blue-300';
+					break;
+				case WordSzintek.b2:
+					return 'bg-blue-300';
+					break;
+				case WordSzintek.c1:
+					return 'bg-pink-300';
 					break;
 				case WordSzintek.c2:
-					return 'bg-red-500';
+					return 'bg-pink-300';
 					break;
 				default:
 					return 'bg-gray-500';
