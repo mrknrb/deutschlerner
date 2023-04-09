@@ -1,4 +1,5 @@
 export enum FilterTypeEnums {
 	text = 'text',
-	button = 'button'
+	button = 'button',
+	dropdown = 'dropdown'
 }

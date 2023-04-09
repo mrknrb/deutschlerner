@@ -24,6 +24,7 @@ h2{
 }
 
 
+/*
 
 a, b ,*,.unselectable {
     -webkit-touch-callout: none;
@@ -33,6 +34,7 @@ a, b ,*,.unselectable {
     -ms-user-select: none;
     user-select: none;
 }
+*/
 
 .cursorSelect {cursor: pointer;}
 
