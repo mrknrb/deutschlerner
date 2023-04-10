@@ -12,7 +12,7 @@
 
     <b class="font-bold text-xs">{FilterData.name}</b>
 
-    <select  class=" border-4 border-gray-800 bg-green-700 h-full  text-xl" value={FilterValue ||""} on:change={(e) => {
+    <select  class=" border-4 border-gray-800 h-full {FilterValue?'bg-green-600':'bg-gray-500'} text-xl" value={FilterValue ||""} on:change={(e) => {
 				FilterStoreCommands.updateURL((old) => {
 					//oiu.set(	old,filterName,filterTextValue)
 					//let a = oiu.create();

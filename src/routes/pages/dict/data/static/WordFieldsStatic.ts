@@ -88,6 +88,26 @@ export const WordFieldsStatic: fieldBasic[] = [
 		}
 	},
 	{
+		name: WordFields.magyar,
+		type: FieldTypes.list,
+		size: 7,
+		clickAction: (data) => {
+			window.open(
+				'https://www.linguee.com/english-german/search?source=german&query=' + data.szo,
+				'_blank'
+			);
+		}
+	},
+	{
+		name: WordFields.szinonima,
+		type: FieldTypes.list,
+		clickAction: (data) => {
+			let filter: FilterStoreType = { arg_idszinonimai: data.id };
+
+			window.open('dict?' + queryString.stringify(filter), '_blank');
+		}
+	},
+	{
 		name: WordFields.jelentes,
 		type: FieldTypes.list,
 		size: 15,
@@ -125,28 +145,12 @@ export const WordFieldsStatic: fieldBasic[] = [
 		}
 	},
 	{
-		name: WordFields.szinonima,
-		type: FieldTypes.list,
-		clickAction: (data) => {
-			let filter: FilterStoreType = { arg_idszinonimai: data.id };
-
-			window.open('dict?' + queryString.stringify(filter), '_blank');
-		}
-	},
-	{
 		name: WordFields.antonima,
-		type: FieldTypes.list,
-		clickAction: (data) => {
-			window.open(
-				'https://www.linguee.com/english-german/search?source=german&query=' + data.szo,
-				'_blank'
-			);
-		}
+		type: FieldTypes.list
 	},
-	//{ name: WordFields.kozosszoto, type: FieldTypes.list, size: 50 },
-	//{ name: WordFields.sentences, type: FieldTypes.list },
+	{ name: WordFields.sentences, type: FieldTypes.list, size: 50 },
 
-	{ name: WordFields.magyar, type: FieldTypes.list },
+	{ name: WordFields.kozosszoto, type: FieldTypes.list, size: 40 },
 
 	{ name: WordFields.ismetlesdatum, type: FieldTypes.string },
 	{ name: WordFields.objects, type: FieldTypes.list, size: 30 },

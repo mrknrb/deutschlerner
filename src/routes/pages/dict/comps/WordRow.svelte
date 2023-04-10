@@ -26,9 +26,9 @@ return a
 
 
 </script>
-<tr class="bg-gray-300 h-10  border-indigo-500 border-solid border-4 align-top">
+<tr class="bg-gray-300 h-10  border-gray-600 border-solid border-4 align-top">
 {#each fields as field,o}
-    <td on:click={()=>{
+    <td class=" border-gray-400  border-solid border-r-2 " on:click={()=>{
         fields[o]?.clickAction(word)
 
     }}>

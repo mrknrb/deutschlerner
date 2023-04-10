@@ -13,7 +13,7 @@
     <b class="font-bold text-xs">{FilterData.name}</b>
     <input
             type="text"
-            class="bg-green-700 h-full  text-xl border-4 border-gray-800"
+            class="{FilterValue?'bg-green-600':'bg-gray-500'} h-full  text-xl border-4 border-gray-800"
             value={FilterValue||""  }
             on:change={(e) => {
 				FilterStoreCommands.updateURL((old) => {
