@@ -49,7 +49,7 @@ export const WordFieldsStatic: fieldBasic[] = [
 	{ name: WordFields.szinonimatudasszint, type: FieldTypes.string, size: 2 },
 	{
 		name: WordFields.szo,
-		size: 9,
+		size: 7,
 		szin: (word) => {
 			switch (word.nevelo) {
 				case WordNevelok.der:
@@ -99,29 +99,8 @@ export const WordFieldsStatic: fieldBasic[] = [
 		}
 	},
 	{
-		name: WordFields.szinonima,
-		type: FieldTypes.list,
-		clickAction: (data) => {
-			let filter: FilterStoreType = { arg_idszinonimai: data.id };
-
-			window.open('dict?' + queryString.stringify(filter), '_blank');
-		}
-	},
-	{
-		name: WordFields.jelentes,
-		type: FieldTypes.list,
-		size: 15,
-		clickAction: async (data) => {
-			await supabase.rpc('ismetlesdatumnow', {
-				arg_id: data.id
-			});
-			setTimeout(async (args) => {
-				await WordsStoreCommands.refreshOneWord(data.id);
-			}, 2000);
-		}
-	},
-	{
 		name: WordFields.angol,
+		size: 7,
 		type: FieldTypes.list,
 		clickAction: async (data) => {
 			let szinonimatudasszint = tudasszintNovelo(data.szinonimatudasszint);
@@ -142,6 +121,28 @@ export const WordFieldsStatic: fieldBasic[] = [
 			setTimeout(async (args) => {
 				await WordsStoreCommands.refreshOneWord(data.id);
 			}, 2000);
+		}
+	},
+	{
+		name: WordFields.jelentes,
+		type: FieldTypes.list,
+		size: 15,
+		clickAction: async (data) => {
+			await supabase.rpc('ismetlesdatumnow', {
+				arg_id: data.id
+			});
+			setTimeout(async (args) => {
+				await WordsStoreCommands.refreshOneWord(data.id);
+			}, 2000);
+		}
+	},
+	{
+		name: WordFields.szinonima,
+		type: FieldTypes.list,
+		clickAction: (data) => {
+			let filter: FilterStoreType = { arg_idszinonimai: data.id };
+
+			window.open('dict?' + queryString.stringify(filter), '_blank');
 		}
 	},
 	{

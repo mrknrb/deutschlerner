@@ -34,6 +34,6 @@ $:data2=data.sort(function (a, b) {
 {#each data2 as d, i}
 	{#if data2[i]}
 
-		<a class="w-full font-bold {colors[data2[i].numbers]?colors[data2[i].numbers]: 'bg-zinc-400'} rounded mr-2 p-1">{@html   data2[i]?.text ??data2[i]} </a>
+		<a class="break-words w-full font-bold {colors[data2[i].numbers]?colors[data2[i].numbers]: 'bg-zinc-400'} rounded mr-2 p-1">{@html   data2[i]?.text ??data2[i]} </a>
 	{/if}
 {/each}
