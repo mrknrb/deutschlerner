@@ -149,10 +149,19 @@ export const WordFieldsStatic: fieldBasic[] = [
 		name: WordFields.antonima,
 		type: FieldTypes.list
 	},
+
+	{
+		name: WordFields.kozosszoto,
+		type: FieldTypes.list,
+		size: 40,
+		clickAction: (data) => {
+			let filter: FilterStoreType = { arg_szoto: data.szoto };
+
+			window.open('dict?' + queryString.stringify(filter), '_blank');
+		}
+	},
+
 	{ name: WordFields.sentences, type: FieldTypes.list, size: 50 },
-
-	{ name: WordFields.kozosszoto, type: FieldTypes.list, size: 40 },
-
 	{ name: WordFields.ismetlesdatum, type: FieldTypes.string },
 	{ name: WordFields.objects, type: FieldTypes.list, size: 30 },
 	{ name: WordFields.prepoziciok, type: FieldTypes.list, size: 30 },

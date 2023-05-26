@@ -35,6 +35,10 @@ export const WordFiltersStatic: FilterStaticType[] = [
 		type: FilterTypeEnums.text
 	},
 	{
+		name: FilterNameEnums.arg_szoto,
+		type: FilterTypeEnums.text
+	},
+	{
 		name: FilterNameEnums.arg_idszinonimai,
 		type: FilterTypeEnums.text
 	}
