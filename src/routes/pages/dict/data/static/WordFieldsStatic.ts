@@ -161,6 +161,7 @@ export const WordFieldsStatic: fieldBasic[] = [
 		}
 	},
 
+	{ name: WordFields.memotext, type: FieldTypes.textplayer, size: 15 },
 	{ name: WordFields.sentences, type: FieldTypes.list, size: 50 },
 	{ name: WordFields.ismetlesdatum, type: FieldTypes.string },
 	{ name: WordFields.objects, type: FieldTypes.list, size: 30 },

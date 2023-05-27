@@ -29,7 +29,9 @@
 	"/pages/user/usersettings": [],
 	"/pages/user/signup": [],
 	"/pages/user/login": [],
-	"/pages/dict": [],
+	"/pages/dict": [
+		"src/routes/pages/dict/+page.ts"
+	],
 	"/i.json": [
 		"src/routes/i.json/+server.ts"
 	],

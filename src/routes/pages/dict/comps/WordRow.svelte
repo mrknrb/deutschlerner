@@ -4,6 +4,7 @@
 	import WordFieldString from './WordFields/WordFieldString.svelte';
     import {Word} from "../data/types/Word";
     import WordFieldList from "./WordFields/WordFieldList.svelte"
+    import WordFieldTextPlayer from "./WordFields/WordFieldTextPlayer.svelte";
 	export let word: Word;
 
 	export let fields: fieldBasic[] = [];
@@ -29,7 +30,7 @@ return a
 <tr class="bg-gray-300 h-10  border-gray-600 border-solid border-4 align-top">
 {#each fields as field,o}
     <td class=" border-gray-400  border-solid border-r-2 " on:click={()=>{
-        fields[o]?.clickAction(word)
+     if(fields[o]?.clickAction)   fields[o]?.clickAction(word)
 
     }}>
 
@@ -44,10 +45,11 @@ return a
 
                 <WordFieldList  data={word[field.name]}> </WordFieldList>
 
+            {:else if  field.type===FieldTypes.textplayer}
 
-                <!-- else if content here -->
 
-                <!-- else content here -->
+                <WordFieldTextPlayer wordData={word} data={word[field.name]}> </WordFieldTextPlayer>
+
             {/if}
 
 

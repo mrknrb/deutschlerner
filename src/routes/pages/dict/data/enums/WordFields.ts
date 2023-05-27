@@ -28,5 +28,6 @@ export enum WordFields {
 	prepoziciok = 'prepoziciok',
 	szinonimatudasszint = 'szinonimatudasszint',
 	ismetlesdatum = 'ismetlesdatum',
-	kozosszoto = 'kozosszoto'
+	kozosszoto = 'kozosszoto',
+	memotext = 'memotext'
 }
