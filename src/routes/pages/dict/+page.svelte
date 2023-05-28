@@ -17,6 +17,7 @@
 	import { FilterNameEnums } from './data/enums/FilterNameEnums';
 	import { oiu } from '../../../Egyebek/oiu';
 	import { speech } from '../../../lib/speechObject';
+	import {WordsStoreValue} from "./apiClient/WordsStore/WordsStore.js";
 	let data: any[] = [];
 	onMount(() => {
 		window.addEventListener('popstate', function () {
@@ -44,20 +45,18 @@
 		<input
 			value="pause"
 			type="button"
-			class="w-10 h-full bg-blue-500"
+			class="w-30 h-full bg-blue-500"
 			on:click={() => {
 				speech.cancel();
-				//			if (speech.paused()) {
 
-				//				console.log("p")
-				//					speech.resume();
-				//			}
-				//				else {
-				//	console.log("s")
+			}}
+		/><input
+			value="copy all words"
+			type="button"
+			class="w-30 h-full bg-green-500"
+			on:click={() => {
+			 navigator.clipboard.writeText(JSON.stringify(	WordsStoreValue.szavak.map(value =>{return value.szo} )));
 
-				//					speech.pause();
-
-				//				}
 			}}
 		/>
 	</div>
