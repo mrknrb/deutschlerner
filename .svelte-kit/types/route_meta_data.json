@@ -40,5 +40,8 @@
 	],
 	"/pages/dict/apiServer/i": [
 		"src/routes/pages/dict/apiServer/i/+server.ts"
+	],
+	"/pages/memotexts": [
+		"src/routes/pages/memotexts/+page.ts"
 	]
 }

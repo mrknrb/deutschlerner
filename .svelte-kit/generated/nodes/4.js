@@ -1,1 +1,3 @@
-export { default as component } from "..\\..\\..\\src\\routes\\pages\\user\\login\\+page.svelte";
+import * as shared from "..\\..\\..\\src\\routes\\pages\\memotexts\\+page.ts";
+export { shared };
+export { default as component } from "..\\..\\..\\src\\routes\\pages\\memotexts\\+page.svelte";

@@ -25,7 +25,7 @@
 		</div>
 
 		<PageButton name="Dictionary" src="pages/dict" />
-		<PageButton name="Handbook" src="pages/handbook" />
+		<PageButton name="Memotexts" src="pages/memotexts" />
 	</div>
 </header>
 

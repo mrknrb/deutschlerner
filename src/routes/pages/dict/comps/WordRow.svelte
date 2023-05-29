@@ -4,7 +4,7 @@
 	import WordFieldString from './WordFields/WordFieldString.svelte';
     import {Word} from "../data/types/Word";
     import WordFieldList from "./WordFields/WordFieldList.svelte"
-    import WordFieldTextPlayer from "./WordFields/WordFieldTextPlayer.svelte";
+    import WordFieldMemoTextPlayer from "./WordFields/WordFieldMemoTextPlayer.svelte";
 	export let word: Word;
 
 	export let fields: fieldBasic[] = [];
@@ -48,7 +48,7 @@ return a
             {:else if  field.type===FieldTypes.textplayer}
 
 
-                <WordFieldTextPlayer wordData={word} data={word[field.name]}> </WordFieldTextPlayer>
+                <WordFieldMemoTextPlayer wordData={word} data={word[field.name]}> </WordFieldMemoTextPlayer>
 
             {/if}
 
