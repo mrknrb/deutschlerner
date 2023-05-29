@@ -9,15 +9,6 @@
 
 	export let fields: fieldBasic[] = [];
 
- /*  $: szingenerator=(field:fieldBasic)=>{
-       if (!field?.szinek||!word[field.name])return
-
-       let a = field?.szinek?.find((l)=>{l.fieldValue===word[field.name]})
-       if(a) {
-           console.log(a)
-       }
-return a
-   }*/
     function szin(o:number,word){
       if (!fields[o].szin)return ""
        return fields[o].szin(word)

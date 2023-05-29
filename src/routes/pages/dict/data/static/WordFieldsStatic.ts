@@ -103,24 +103,26 @@ export const WordFieldsStatic: fieldBasic[] = [
 		size: 7,
 		type: FieldTypes.list,
 		clickAction: async (data) => {
-			let szinonimatudasszint = tudasszintNovelo(data.szinonimatudasszint);
-			WordsStore.update((value) => {
-				let szoIndex = value.szavak?.findIndex((value1, index) => {
-					return value1.id === data.id;
-				});
-				if (szoIndex != undefined && szoIndex !== -1 && value.szavak) {
-					value.szavak[szoIndex].szinonimatudasszint = szinonimatudasszint;
-				}
+			if (confirm('Are you sure?') == true) {
+				let szinonimatudasszint = tudasszintNovelo(data.szinonimatudasszint);
+				WordsStore.update((value) => {
+					let szoIndex = value.szavak?.findIndex((value1, index) => {
+						return value1.id === data.id;
+					});
+					if (szoIndex != undefined && szoIndex !== -1 && value.szavak) {
+						value.szavak[szoIndex].szinonimatudasszint = szinonimatudasszint;
+					}
 
-				return value;
-			});
-			await supabase.rpc('szinonimatudasszintset', {
-				arg_id: data.id,
-				arg_szinonimatudasszint: szinonimatudasszint
-			});
-			setTimeout(async (args) => {
-				await WordsStoreCommands.refreshOneWord(data.id);
-			}, 2000);
+					return value;
+				});
+				await supabase.rpc('szinonimatudasszintset', {
+					arg_id: data.id,
+					arg_szinonimatudasszint: szinonimatudasszint
+				});
+				setTimeout(async (args) => {
+					await WordsStoreCommands.refreshOneWord(data.id);
+				}, 2000);
+			}
 		}
 	},
 	{
