@@ -41,7 +41,7 @@ export function TextSpeakFunc(text: string) {
 		listeners: {
 			onend: () => {
 				if (!speech.speaking()) {
-					WordsSpeakFunc(text);
+					TextSpeakFunc(text);
 				}
 			}
 		}
