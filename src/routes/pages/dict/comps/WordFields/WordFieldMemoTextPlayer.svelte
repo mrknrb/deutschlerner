@@ -5,6 +5,7 @@
 	import { WordsStoreCommands } from '../../apiClient/WordsStore/WordsStore.js';
 	import { Word } from '../../data/types/Word';
 	import { speech } from '../../../../../lib/speechObject.js';
+	import {TextSpeakFunc} from "../../apiClient/WordsStore/WordsSpeakFunc.js";
 
 	export let wordData: Word;
 	export let data: { id?: string; text?: string }[] = [];
@@ -15,16 +16,8 @@
 		<a
 			class="break-words w-full font-bold rounded mr-2 p-1"
 			on:click={() => {
-				speech
-					.speak({
-						text: data[i]?.text
-					})
-					.then(() => {
-						console.log('Success !');
-					})
-					.catch((e) => {
-						console.error('An error occurred :', e);
-					});
+				TextSpeakFunc(data[i]?.text)
+
 			}}>{data[i]?.text.slice(0, 30)}...</a
 		>
 		<input

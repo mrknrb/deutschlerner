@@ -32,6 +32,21 @@ export function WordsSpeakFunc(words: Word[]) {
 		}
 	});
 }
+export function TextSpeakFunc(text: string) {
+	let readtext = '1. 2. 3.';
+	readtext += '';
+
+	speech.speak({
+		text: readtext,
+		listeners: {
+			onend: () => {
+				if (!speech.speaking()) {
+					WordsSpeakFunc(text);
+				}
+			}
+		}
+	});
+}
 function getRandom(arr: any[], n: number) {
 	if (arr.length < n) n = arr.length;
 	let result = new Array(n),
