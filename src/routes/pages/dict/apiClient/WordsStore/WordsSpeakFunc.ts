@@ -34,7 +34,7 @@ export function WordsSpeakFunc(words: Word[]) {
 }
 export function TextSpeakFunc(text: string) {
 	let readtext = '1. 2. 3.';
-	readtext += '';
+	readtext += text;
 
 	speech.speak({
 		text: readtext,
