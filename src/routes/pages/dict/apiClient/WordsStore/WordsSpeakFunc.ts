@@ -31,7 +31,8 @@ export function WordsSpeakFunc(words: Word[]) {
 		}
 	});
 }
-function getRandom(arr, n) {
+function getRandom(arr: any[], n: number) {
+	if (arr.length < n) n = arr.length;
 	let result = new Array(n),
 		len = arr.length,
 		taken = new Array(len);
