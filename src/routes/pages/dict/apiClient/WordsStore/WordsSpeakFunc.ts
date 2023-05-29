@@ -21,12 +21,13 @@ export function WordsSpeakFunc(words: Word[]) {
 			}
 		});
 	});
-	console.log(readtext);
 	speech.speak({
 		text: readtext,
 		listeners: {
 			onend: () => {
-				WordsSpeakFunc(words);
+				if (!speech.speaking()) {
+					WordsSpeakFunc(words);
+				}
 			}
 		}
 	});
