@@ -9,4 +9,6 @@ export interface Word {
 	nevelo: WordNevelok;
 	szoto: string;
 	szinonimatudasszint: number;
+	magyar: string[];
+	sentences: string[];
 }

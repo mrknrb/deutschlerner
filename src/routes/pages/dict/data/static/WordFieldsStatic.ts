@@ -12,6 +12,7 @@ import { tudasszintNovelo } from '../../apiClient/WordsStore/DictFunctions';
 import { WordSzintek } from '../enums/WordSzintek';
 import { WordNevelok } from '../enums/WordNevelok';
 import queryString from 'query-string';
+import { WordsSpeakFunc } from '../../apiClient/WordsStore/WordsSpeakFunc';
 
 export const WordFieldsStatic: fieldBasic[] = [
 	{
@@ -91,11 +92,13 @@ export const WordFieldsStatic: fieldBasic[] = [
 		name: WordFields.magyar,
 		type: FieldTypes.list,
 		size: 7,
-		clickAction: (data) => {
-			window.open(
-				'https://www.linguee.com/english-german/search?source=german&query=' + data.szo,
-				'_blank'
-			);
+		clickAction: async (data) => {
+			await supabase.rpc('ismetlesdatumnow', {
+				arg_id: data.id
+			});
+			setTimeout(async (args) => {
+				await WordsStoreCommands.refreshOneWord(data.id);
+			}, 2000);
 		}
 	},
 	{
@@ -129,13 +132,11 @@ export const WordFieldsStatic: fieldBasic[] = [
 		name: WordFields.jelentes,
 		type: FieldTypes.list,
 		size: 15,
-		clickAction: async (data) => {
-			await supabase.rpc('ismetlesdatumnow', {
-				arg_id: data.id
-			});
-			setTimeout(async (args) => {
-				await WordsStoreCommands.refreshOneWord(data.id);
-			}, 2000);
+		clickAction: (data) => {
+			window.open(
+				'https://www.linguee.com/english-german/search?source=german&query=' + data.szo,
+				'_blank'
+			);
 		}
 	},
 	{
@@ -149,7 +150,10 @@ export const WordFieldsStatic: fieldBasic[] = [
 	},
 	{
 		name: WordFields.antonima,
-		type: FieldTypes.list
+		type: FieldTypes.list,
+		clickAction: (data) => {
+			WordsSpeakFunc([data]);
+		}
 	},
 
 	{
@@ -163,7 +167,7 @@ export const WordFieldsStatic: fieldBasic[] = [
 		}
 	},
 
-	{ name: WordFields.memotext, type: FieldTypes.textplayer, size: 15 },
+	{ name: WordFields.memotext, type: FieldTypes.textplayer, size: 10 },
 	{ name: WordFields.sentences, type: FieldTypes.list, size: 50 },
 	{ name: WordFields.ismetlesdatum, type: FieldTypes.string },
 	{ name: WordFields.objects, type: FieldTypes.list, size: 30 },
