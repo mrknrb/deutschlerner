@@ -43,9 +43,7 @@ declare module '$env/static/private' {
 	export const DEVECOSTUDIO_VM_OPTIONS: string;
 	export const DriverData: string;
 	export const EDITOR: string;
-	export const EFC_7040: string;
-	export const FPS_BROWSER_APP_PROFILE_STRING: string;
-	export const FPS_BROWSER_USER_PROFILE_STRING: string;
+	export const EFC_10936: string;
 	export const GATEWAY_VM_OPTIONS: string;
 	export const GOLAND_VM_OPTIONS: string;
 	export const HOME: string;
@@ -161,9 +159,7 @@ declare module '$env/dynamic/private' {
 		DEVECOSTUDIO_VM_OPTIONS: string;
 		DriverData: string;
 		EDITOR: string;
-		EFC_7040: string;
-		FPS_BROWSER_APP_PROFILE_STRING: string;
-		FPS_BROWSER_USER_PROFILE_STRING: string;
+		EFC_10936: string;
 		GATEWAY_VM_OPTIONS: string;
 		GOLAND_VM_OPTIONS: string;
 		HOME: string;

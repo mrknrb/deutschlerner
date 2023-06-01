@@ -70,7 +70,14 @@
 			on:click={() => {
 			WordsSpeakFunc(WordsStoreValue.szavak)
 			}}
-		/>
+		/><input
+
+
+			class="w-24 h-full bg-cyan-500 ml-2 "
+			on:change={(event) => {
+			speech.setRate(event.target.value)
+			}}
+	/>
 	</div>
 </div>
 
