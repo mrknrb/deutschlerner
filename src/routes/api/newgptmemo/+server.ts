@@ -12,7 +12,7 @@ export async function POST({ request }) {
 	const openai = new OpenAIApi(configuration);
 	const response = await openai.createChatCompletion({
 		model: 'gpt-3.5-turbo',
-		max_tokens: 1000,
+		max_tokens: 2000,
 		messages: [
 			{
 				role: 'system',
