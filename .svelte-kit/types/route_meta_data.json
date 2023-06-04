@@ -30,7 +30,8 @@
 	"/pages/user/signup": [],
 	"/pages/user/login": [],
 	"/pages/dict": [
-		"src/routes/pages/dict/+page.ts"
+		"src/routes/pages/dict/+page.ts",
+		"src/routes/pages/dict/+page.server.ts"
 	],
 	"/i.json": [
 		"src/routes/i.json/+server.ts"
@@ -43,5 +44,8 @@
 	],
 	"/pages/memotexts": [
 		"src/routes/pages/memotexts/+page.ts"
+	],
+	"/api/newgptmemo": [
+		"src/routes/api/newgptmemo/+server.ts"
 	]
 }

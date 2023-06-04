@@ -39,13 +39,7 @@
 {/each}
 <input
 	on:change={async (event) => {
-		await supabase.rpc('memotextadd', {
-			arg_wordrowid: wordData.id,
-			arg_text: event.target.value
-		});
-		event.target.value = '';
-		setTimeout(async (args) => {
-			await WordsStoreCommands.refreshOneWord(wordData.id);
-		}, 2000);
+		WordsStoreCommands.newMemo(wordData,event.target.value)
+	event.target.value = '';
 	}}
 />

@@ -43,9 +43,13 @@ export const WordFieldsStatic: fieldBasic[] = [
 				default:
 					return 'bg-gray-500';
 			}
+		},
+		clickAction: async (data) => {
+			if (confirm('Are you sure?') == true) {
+				await WordsStoreCommands.newGptMemo(data);
+			}
 		}
 	},
-
 	{ name: WordFields.tudasszint, type: FieldTypes.string, size: 2 },
 	{ name: WordFields.szinonimatudasszint, type: FieldTypes.string, size: 2 },
 	{

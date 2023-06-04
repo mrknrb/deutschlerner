@@ -67,9 +67,31 @@ let refreshWordsFromURL = async () => {
 
 	refreshWords();
 };
+let newGptMemo = async (word: Word) => {
+	const response = await fetch('/api/newgptmemo', {
+		method: 'POST',
+		body: JSON.stringify(word),
+		headers: {
+			'content-type': 'application/json'
+		}
+	});
+
+	await WordsStoreCommands.newMemo(word, await response.json());
+};
+let newMemo = async (word: Word, memo: string) => {
+	await supabase.rpc('memotextadd', {
+		arg_wordrowid: word.id,
+		arg_text: memo
+	});
+	setTimeout(async (args) => {
+		await WordsStoreCommands.refreshOneWord(word.id);
+	}, 2000);
+};
 
 export let WordsStoreCommands = {
+	newMemo,
 	refreshWords,
 	refreshWordsFromURL,
-	refreshOneWord
+	refreshOneWord,
+	newGptMemo
 };

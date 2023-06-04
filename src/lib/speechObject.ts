@@ -5,7 +5,7 @@ speech
 	.init({
 		volume: 1,
 		lang: 'de-DE',
-		rate: 1,
+		rate: 1.2,
 		pitch: 1,
 		voice: 'Google Deutsch',
 		splitSentences: true,

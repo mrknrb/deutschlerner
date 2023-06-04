@@ -11,4 +11,5 @@ export interface Word {
 	szinonimatudasszint: number;
 	magyar: string[];
 	sentences: string[];
+	szinonima: string[];
 }
