@@ -160,6 +160,9 @@ export const WordFieldsStatic: fieldBasic[] = [
 		}
 	},
 
+	{ name: WordFields.sentences, type: FieldTypes.list, size: 50 },
+
+	{ name: WordFields.memotext, type: FieldTypes.textplayer, size: 10 },
 	{
 		name: WordFields.kozosszoto,
 		type: FieldTypes.list,
@@ -170,9 +173,6 @@ export const WordFieldsStatic: fieldBasic[] = [
 			window.open('dict?' + queryString.stringify(filter), '_blank');
 		}
 	},
-
-	{ name: WordFields.memotext, type: FieldTypes.textplayer, size: 10 },
-	{ name: WordFields.sentences, type: FieldTypes.list, size: 50 },
 	{ name: WordFields.ismetlesdatum, type: FieldTypes.string },
 	{ name: WordFields.objects, type: FieldTypes.list, size: 30 },
 	{ name: WordFields.prepoziciok, type: FieldTypes.list, size: 30 },
