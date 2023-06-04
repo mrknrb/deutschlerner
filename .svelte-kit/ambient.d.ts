@@ -28,6 +28,7 @@
 declare module '$env/static/private' {
 	export const VITE_SUPABASE_URL: string;
 	export const VITE_SUPABASE_ANON_KEY: string;
+	export const OPEN_AI_KEY: string;
 	export const ALLUSERSPROFILE: string;
 	export const AMDRMSDKPATH: string;
 	export const APPCODE_VM_OPTIONS: string;
@@ -43,7 +44,7 @@ declare module '$env/static/private' {
 	export const DEVECOSTUDIO_VM_OPTIONS: string;
 	export const DriverData: string;
 	export const EDITOR: string;
-	export const EFC_7428: string;
+	export const EFC_6564: string;
 	export const GATEWAY_VM_OPTIONS: string;
 	export const GOLAND_VM_OPTIONS: string;
 	export const HOME: string;
@@ -144,6 +145,7 @@ declare module '$env/dynamic/private' {
 	export const env: {
 		VITE_SUPABASE_URL: string;
 		VITE_SUPABASE_ANON_KEY: string;
+		OPEN_AI_KEY: string;
 		ALLUSERSPROFILE: string;
 		AMDRMSDKPATH: string;
 		APPCODE_VM_OPTIONS: string;
@@ -159,7 +161,7 @@ declare module '$env/dynamic/private' {
 		DEVECOSTUDIO_VM_OPTIONS: string;
 		DriverData: string;
 		EDITOR: string;
-		EFC_7428: string;
+		EFC_6564: string;
 		GATEWAY_VM_OPTIONS: string;
 		GOLAND_VM_OPTIONS: string;
 		HOME: string;
