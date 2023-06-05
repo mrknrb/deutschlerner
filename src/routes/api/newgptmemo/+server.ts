@@ -19,7 +19,7 @@ export async function POST({ request }) {
 			{
 				role: 'system',
 				content:
-					'The user will give you a list of words and your job is to generate a tale from them. it should be in german and its purpose is to teach him the meaning of the words. it should be around a 1500 word long.'
+					'The user will give you a list of words and your job is to generate a cool, fun or "jack london style" story from them. it should be in german and its purpose is to teach him the meaning of the words. it should use the words more times. it should be around a 1500 word long.'
 			},
 			{ role: 'user', content: JSON.stringify(word.szinonima) }
 		]
