@@ -154,13 +154,17 @@ export const WordFieldsStatic: fieldBasic[] = [
 	},
 	{
 		name: WordFields.antonima,
+		type: FieldTypes.list
+	},
+
+	{
+		name: WordFields.sentences,
 		type: FieldTypes.list,
+		size: 50,
 		clickAction: (data) => {
 			WordsSpeakFunc([data]);
 		}
 	},
-
-	{ name: WordFields.sentences, type: FieldTypes.list, size: 50 },
 
 	{ name: WordFields.memotext, type: FieldTypes.textplayer, size: 10 },
 	{
