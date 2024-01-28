@@ -14,9 +14,9 @@ export let MemoStore = writable(MemoStoreDefault, () => {
 	return;
 });
 
-export let WordsStoreValue: MemoStoreType;
+export let MemoStoreValue: MemoStoreType;
 MemoStore.subscribe((value) => {
-	WordsStoreValue = value;
+	MemoStoreValue = value;
 });
 
 let refreshMemos = async () => {

@@ -44,7 +44,7 @@ declare module '$env/static/private' {
 	export const DEVECOSTUDIO_VM_OPTIONS: string;
 	export const DriverData: string;
 	export const EDITOR: string;
-	export const EFC_7504: string;
+	export const EFC_2844: string;
 	export const GATEWAY_VM_OPTIONS: string;
 	export const GOLAND_VM_OPTIONS: string;
 	export const HOME: string;
@@ -82,6 +82,7 @@ declare module '$env/static/private' {
 	export const npm_package_version: string;
 	export const NPM_PREFIX_NPM_CLI_JS: string;
 	export const NUMBER_OF_PROCESSORS: string;
+	export const OculusBase: string;
 	export const OneDrive: string;
 	export const OneDriveConsumer: string;
 	export const OS: string;
@@ -161,7 +162,7 @@ declare module '$env/dynamic/private' {
 		DEVECOSTUDIO_VM_OPTIONS: string;
 		DriverData: string;
 		EDITOR: string;
-		EFC_7504: string;
+		EFC_2844: string;
 		GATEWAY_VM_OPTIONS: string;
 		GOLAND_VM_OPTIONS: string;
 		HOME: string;
@@ -199,6 +200,7 @@ declare module '$env/dynamic/private' {
 		npm_package_version: string;
 		NPM_PREFIX_NPM_CLI_JS: string;
 		NUMBER_OF_PROCESSORS: string;
+		OculusBase: string;
 		OneDrive: string;
 		OneDriveConsumer: string;
 		OS: string;

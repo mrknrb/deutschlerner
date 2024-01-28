@@ -5,6 +5,7 @@
     import {Word} from "../data/types/Word";
     import WordFieldList from "./WordFields/WordFieldList.svelte"
     import WordFieldMemoTextPlayer from "./WordFields/WordFieldMemoTextPlayer.svelte";
+    import {WordsStoreCommands} from "../apiClient/WordsStore/WordsStore.js";
 	export let word: Word;
 
 	export let fields: fieldBasic[] = [];
@@ -18,12 +19,12 @@
 
 
 </script>
-<tr class="bg-gray-300 h-10  border-gray-600 border-solid border-4 align-top">
-{#each fields as field,o}
-    <td class=" border-gray-400  border-solid border-r-2 " on:click={()=>{
-     if(fields[o]?.clickAction)   fields[o]?.clickAction(word)
+<tr class="bg-gray-300 h-10  border-gray-600 border-solid border-4 align-top"on:click={(e)=>{
+      WordsStoreCommands.selectWord(word)
 
     }}>
+{#each fields as field,o}
+    <td class=" border-gray-400  border-solid border-r-2 " >
 
         {#if word[field.name]!==undefined&&word[field.name]!==null}
 

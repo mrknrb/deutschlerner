@@ -43,11 +43,6 @@ export const WordFieldsStatic: fieldBasic[] = [
 				default:
 					return 'bg-gray-500';
 			}
-		},
-		clickAction: async (data) => {
-			if (confirm('Are you sure?') == true) {
-				await WordsStoreCommands.newGptMemo(data);
-			}
 		}
 	},
 	{ name: WordFields.tudasszint, type: FieldTypes.string, size: 2 },
@@ -70,87 +65,26 @@ export const WordFieldsStatic: fieldBasic[] = [
 					return '';
 			}
 		},
-		type: FieldTypes.string,
-		clickAction: async (data) => {
-			let tudasszint = tudasszintNovelo(data.tudasszint);
-			WordsStore.update((value) => {
-				let szoIndex = value.szavak?.findIndex((value1, index) => {
-					return value1.id === data.id;
-				});
-				if (szoIndex != undefined && szoIndex !== -1 && value.szavak) {
-					value.szavak[szoIndex].tudasszint = tudasszint;
-				}
-
-				return value;
-			});
-			await supabase.rpc('tudasszintset', {
-				arg_id: data.id,
-				arg_tudasszint: tudasszint
-			});
-			setTimeout(async (args) => {
-				await WordsStoreCommands.refreshOneWord(data.id);
-			}, 2000);
-		}
+		type: FieldTypes.string
 	},
 	{
 		name: WordFields.magyar,
 		type: FieldTypes.list,
-		size: 7,
-		clickAction: async (data) => {
-			await supabase.rpc('ismetlesdatumnow', {
-				arg_id: data.id
-			});
-			setTimeout(async (args) => {
-				await WordsStoreCommands.refreshOneWord(data.id);
-			}, 2000);
-		}
+		size: 7
 	},
 	{
 		name: WordFields.angol,
 		size: 7,
-		type: FieldTypes.list,
-		clickAction: async (data) => {
-			if (confirm('Are you sure?') == true) {
-				let szinonimatudasszint = tudasszintNovelo(data.szinonimatudasszint);
-				WordsStore.update((value) => {
-					let szoIndex = value.szavak?.findIndex((value1, index) => {
-						return value1.id === data.id;
-					});
-					if (szoIndex != undefined && szoIndex !== -1 && value.szavak) {
-						value.szavak[szoIndex].szinonimatudasszint = szinonimatudasszint;
-					}
-
-					return value;
-				});
-				await supabase.rpc('szinonimatudasszintset', {
-					arg_id: data.id,
-					arg_szinonimatudasszint: szinonimatudasszint
-				});
-				setTimeout(async (args) => {
-					await WordsStoreCommands.refreshOneWord(data.id);
-				}, 2000);
-			}
-		}
+		type: FieldTypes.list
 	},
 	{
 		name: WordFields.jelentes,
 		type: FieldTypes.list,
-		size: 15,
-		clickAction: (data) => {
-			window.open(
-				'https://www.linguee.com/english-german/search?source=german&query=' + data.szo,
-				'_blank'
-			);
-		}
+		size: 15
 	},
 	{
 		name: WordFields.szinonima,
-		type: FieldTypes.list,
-		clickAction: (data) => {
-			let filter: FilterStoreType = { arg_idszinonimai: data.id };
-
-			window.open('dict?' + queryString.stringify(filter), '_blank');
-		}
+		type: FieldTypes.list
 	},
 	{
 		name: WordFields.antonima,
@@ -160,22 +94,14 @@ export const WordFieldsStatic: fieldBasic[] = [
 	{
 		name: WordFields.sentences,
 		type: FieldTypes.list,
-		size: 50,
-		clickAction: (data) => {
-			WordsSpeakFunc([data]);
-		}
+		size: 50
 	},
 
 	{ name: WordFields.memotext, type: FieldTypes.textplayer, size: 10 },
 	{
 		name: WordFields.kozosszoto,
 		type: FieldTypes.list,
-		size: 40,
-		clickAction: (data) => {
-			let filter: FilterStoreType = { arg_szoto: data.szoto };
-
-			window.open('dict?' + queryString.stringify(filter), '_blank');
-		}
+		size: 40
 	},
 	{ name: WordFields.ismetlesdatum, type: FieldTypes.string },
 	{ name: WordFields.objects, type: FieldTypes.list, size: 30 },

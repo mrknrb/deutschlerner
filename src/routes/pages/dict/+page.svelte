@@ -19,6 +19,7 @@
 	import { speech } from '../../../lib/speechObject';
 	import { WordsStoreValue } from './apiClient/WordsStore/WordsStore.js';
 	import {WordsSpeakFunc} from "./apiClient/WordsStore/WordsSpeakFunc.js";
+	import WordContextMenu from "./comps/WordContextMenu.svelte";
 	let data: any[] = [];
 	onMount(() => {
 		window.addEventListener('popstate', function () {
@@ -29,7 +30,8 @@
 	});
 </script>
 
-<div style="flex: 0 1 50px" class=" relative flex flex-row overflow-auto">
+<WordContextMenu></WordContextMenu>
+<div style="flex: 0 1 50px" class=" relative flex flex-row overflow-auto" >
 	<!--	<button
 		class="bg-green-300 p-4"
 		on:click={() => {

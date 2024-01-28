@@ -7,10 +7,12 @@ import { FilterStoreCommands, FilterStoreValue } from '../FilterStore/FilterStor
 export type WordsStoreType = {
 	szavak?: Word[];
 	szoId?: string;
+	selectedWord?: Word;
 };
 
 let WordsStoreDefault: WordsStoreType = {
-	szavak: []
+	szavak: [],
+	selectedWord: undefined
 };
 
 export let WordsStore = writable(WordsStoreDefault, () => {
@@ -20,6 +22,7 @@ export let WordsStore = writable(WordsStoreDefault, () => {
 export let WordsStoreValue: WordsStoreType;
 WordsStore.subscribe((value) => {
 	WordsStoreValue = value;
+	console.log(WordsStoreValue);
 });
 
 let refreshWords = async () => {
@@ -38,7 +41,13 @@ let refreshWords = async () => {
 		return value;
 	});
 };
+let selectWord = (word: Word) => {
+	WordsStore.update((value) => {
+		value.selectedWord = word;
 
+		return value;
+	});
+};
 let refreshOneWord = async (id: string) => {
 	//  const { data, error } = await supabase.from('szavak').select().    limit(100)
 	console.log(FilterStoreValue);
@@ -93,5 +102,6 @@ export let WordsStoreCommands = {
 	refreshWords,
 	refreshWordsFromURL,
 	refreshOneWord,
-	newGptMemo
+	newGptMemo,
+	selectWord
 };
