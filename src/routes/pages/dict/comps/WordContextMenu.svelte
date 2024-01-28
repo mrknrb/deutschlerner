@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 import {WordActions} from "../apiClient/WordsStore/WordActions";
 import {WordsStore, WordsStoreCommands, WordsStoreValue} from "../apiClient/WordsStore/WordsStore";
 

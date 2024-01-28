@@ -6,8 +6,8 @@ import { FilterStoreCommands, FilterStoreValue } from '../FilterStore/FilterStor
 
 export type WordsStoreType = {
 	szavak?: Word[];
-	szoId?: string;
 	selectedWord?: Word;
+	tudasszintEgyklickNovelo: boolean;
 };
 
 let WordsStoreDefault: WordsStoreType = {

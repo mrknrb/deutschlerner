@@ -5,7 +5,9 @@
     import {Word} from "../data/types/Word";
     import WordFieldList from "./WordFields/WordFieldList.svelte"
     import WordFieldMemoTextPlayer from "./WordFields/WordFieldMemoTextPlayer.svelte";
-    import {WordsStoreCommands} from "../apiClient/WordsStore/WordsStore.js";
+    import {WordsStoreCommands} from "../apiClient/WordsStore/WordsStore";
+    import {WordsStore} from "../apiClient/WordsStore/WordsStore";
+    import {WordActions} from "../apiClient/WordsStore/WordActions";
 	export let word: Word;
 
 	export let fields: fieldBasic[] = [];
@@ -20,7 +22,16 @@
 
 </script>
 <tr class="bg-gray-300 h-10  border-gray-600 border-solid border-4 align-top"on:click={(e)=>{
-      WordsStoreCommands.selectWord(word)
+    if($WordsStore.tudasszintEgyklickNovelo){
+       let funcObject= WordActions.find(value => {return value.name==="tudasszintNoveles"})
+       funcObject.func(word)
+    }else {
+          WordsStoreCommands.selectWord(word)
+
+    }
+
+
+
 
     }}>
 {#each fields as field,o}

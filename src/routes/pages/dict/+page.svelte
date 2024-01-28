@@ -20,6 +20,7 @@
 	import { WordsStoreValue } from './apiClient/WordsStore/WordsStore.js';
 	import {WordsSpeakFunc} from "./apiClient/WordsStore/WordsSpeakFunc.js";
 	import WordContextMenu from "./comps/WordContextMenu.svelte";
+	import TopButton from "./comps/TopButton.svelte";
 	let data: any[] = [];
 	onMount(() => {
 		window.addEventListener('popstate', function () {
@@ -28,6 +29,14 @@
 
 		WordsStoreCommands.refreshWordsFromURL();
 	});
+	$: colorTudas=()=> {
+
+		if($WordsStore.tudasszintEgyklickNovelo) {
+			return "bg-green-500"
+		}else {
+			return "bg-red-500"
+		}
+	}
 </script>
 
 <WordContextMenu></WordContextMenu>
@@ -44,19 +53,12 @@
 			FilterValue={oiu.get($FilterStore, WordFiltersStatic[i].name)}
 		/>
 	{/each}
-	<div>
-		<input
-			value="pause"
-			type="button"
-			class="w-52 h-full bg-blue-500 ml-2"
-			on:click={() => {
+
+	<TopButton data={{name:"Pause",color:"bg-blue-500",func:() => {
 				speech.cancel();
-			}}
-		/><input
-			value="copy all words"
-			type="button"
-			class="w-52 h-full bg-green-500 ml-2"
-			on:click={() => {
+			}}}></TopButton>
+
+	<TopButton data={{name:"Copy all words",color:"bg-blue-500",func:() => {
 				navigator.clipboard.writeText(
 					JSON.stringify(
 						WordsStoreValue.szavak.map((value) => {
@@ -64,15 +66,21 @@
 						})
 					)
 				);
-			}}
-		/><input
-			value="learn this list!"
-			type="button"
-			class="w-52 h-full bg-amber-500 ml-2 "
-			on:click={() => {
-			WordsSpeakFunc(WordsStoreValue.szavak)
-			}}
-		/><input
+			}}}></TopButton>
+	<TopButton data={{name:"Mind Felolvas",color:"bg-blue-500",func:() => {
+				WordsSpeakFunc(WordsStoreValue.szavak)
+			}}}></TopButton>
+	<TopButton data={{name:"One Click Tudasszint",color:colorTudas(),func:() => {
+
+	WordsStore.update((value) => {
+		value.tudasszintEgyklickNovelo = !value.tudasszintEgyklickNovelo;
+
+		return value;
+	});
+			}}}></TopButton>
+
+
+<input
 
 
 			class="w-24 h-full bg-cyan-500 ml-2 "
@@ -80,7 +88,6 @@
 			speech.setRate(event.target.value)
 			}}
 	/>
-	</div>
 </div>
 
 <div style="flex: 1 1 auto" class=" relative flex flex-row ">
