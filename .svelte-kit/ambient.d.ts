@@ -44,7 +44,7 @@ declare module '$env/static/private' {
 	export const DEVECOSTUDIO_VM_OPTIONS: string;
 	export const DriverData: string;
 	export const EDITOR: string;
-	export const EFC_2844: string;
+	export const EFC_11784: string;
 	export const GATEWAY_VM_OPTIONS: string;
 	export const GOLAND_VM_OPTIONS: string;
 	export const HOME: string;
@@ -67,9 +67,9 @@ declare module '$env/static/private' {
 	export const npm_config_global_prefix: string;
 	export const npm_config_init_module: string;
 	export const npm_config_local_prefix: string;
-	export const npm_config_metrics_registry: string;
 	export const npm_config_node_gyp: string;
 	export const npm_config_noproxy: string;
+	export const npm_config_npm_version: string;
 	export const npm_config_prefix: string;
 	export const npm_config_userconfig: string;
 	export const npm_config_user_agent: string;
@@ -162,7 +162,7 @@ declare module '$env/dynamic/private' {
 		DEVECOSTUDIO_VM_OPTIONS: string;
 		DriverData: string;
 		EDITOR: string;
-		EFC_2844: string;
+		EFC_11784: string;
 		GATEWAY_VM_OPTIONS: string;
 		GOLAND_VM_OPTIONS: string;
 		HOME: string;
@@ -185,9 +185,9 @@ declare module '$env/dynamic/private' {
 		npm_config_global_prefix: string;
 		npm_config_init_module: string;
 		npm_config_local_prefix: string;
-		npm_config_metrics_registry: string;
 		npm_config_node_gyp: string;
 		npm_config_noproxy: string;
+		npm_config_npm_version: string;
 		npm_config_prefix: string;
 		npm_config_userconfig: string;
 		npm_config_user_agent: string;
