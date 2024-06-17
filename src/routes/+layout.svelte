@@ -12,7 +12,7 @@
 		@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
 	</style>
 </svelte:head>
-
+<!--
 <header class=" relative " style="flex: 0 1 50px">
 	<div  class="  flex flex-row overflow-hidden">
 		<div
@@ -24,11 +24,9 @@
 			<img src="/images/logo.png" class="h-10" />
 		</div>
 
-		<PageButton name="Dictionary" src="pages/dict" />
-		<PageButton name="Memotexts" src="pages/memotexts" />
 	</div>
 </header>
-
+>-->
 <div class="  relative flex flex-col " style="flex: 1 1 auto">
 	<slot />
 </div>

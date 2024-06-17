@@ -21,6 +21,7 @@
 	import {WordsSpeakFunc} from "./apiClient/WordsStore/WordsSpeakFunc.js";
 	import WordContextMenu from "./comps/WordContextMenu.svelte";
 	import TopButton from "./comps/TopButton.svelte";
+	import PageButton from "../layout/comps/PageButton.svelte";
 	let data: any[] = [];
 	onMount(() => {
 		window.addEventListener('popstate', function () {
@@ -40,13 +41,15 @@
 </script>
 
 <WordContextMenu></WordContextMenu>
-<div style="flex: 0 1 50px" class=" relative flex flex-row overflow-auto" >
+<div style="" class=" relative flex flex-row overflow-x-auto" >
 	<!--	<button
 		class="bg-green-300 p-4"
 		on:click={() => {
 			WordsStoreCommands.refreshWords();
 		}}>Refresh</button
 	>-->
+
+	<PageButton imgsrc="/images/logo.png"></PageButton>
 	{#each WordFiltersStatic as filter, i}
 		<FilterGenerator
 			FilterData={WordFiltersStatic[i]}

@@ -21,7 +21,7 @@
 
 
 </script>
-<tr class="bg-gray-300 h-10  border-gray-600 border-solid border-4 align-top"on:click={(e)=>{
+<tr class="bg-gray-300 h-10  border-gray-600 border-solid border-4 align-top border-l-0"on:click={(e)=>{
     if($WordsStore.tudasszintEgyklickNovelo){
        let funcObject= WordActions.find(value => {return value.name==="tudasszintNoveles"})
        funcObject.func(word)
@@ -34,14 +34,14 @@
 
 
     }}>
-{#each fields as field,o}
-    <td class=" border-gray-400  border-solid border-r-2 " >
+{#each fields as field,i}
+    <td class=" border-gray-400  border-solid border-r-2 " style="position: {fields[i].sticky ? 'sticky' : 'block'};left: {fields[i].sticky ? '0' : '0'};background-color: inherit">
 
         {#if word[field.name]!==undefined&&word[field.name]!==null}
 
             {#if field.type===FieldTypes.string}
 
-                <WordFieldString szin={szin(o,word) }  data={word[field.name]}> </WordFieldString>
+                <WordFieldString szin={szin(i,word) }  data={word[field.name]}> </WordFieldString>
 
             {:else if  field.type===FieldTypes.list}
 

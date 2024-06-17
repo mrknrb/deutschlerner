@@ -8,4 +8,5 @@ export interface fieldBasic {
 	szinek?: { fieldValue: string; szin: string }[];
 	szin?: (word: Word) => string;
 	clickAction?: (data: Word) => void;
+	sticky?: boolean;
 }

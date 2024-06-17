@@ -16,9 +16,30 @@ import { WordsSpeakFunc } from '../../apiClient/WordsStore/WordsSpeakFunc';
 
 export const WordFieldsStatic: fieldBasic[] = [
 	{
+		name: WordFields.szo,
+		size: 7,
+		sticky: true,
+		szin: (word) => {
+			switch (word.nevelo) {
+				case WordNevelok.der:
+					return 'bg-gray-400';
+					break;
+				case WordNevelok.die:
+					return 'bg-red-300';
+					break;
+				case WordNevelok.das:
+					return 'bg-yellow-300';
+					break;
+				default:
+					return '';
+			}
+		},
+		type: FieldTypes.string
+	},
+	{
 		name: WordFields.szint,
 		type: FieldTypes.string,
-		size: 2,
+		size: 1,
 		szin: (word) => {
 			//console.log(typeof word.szint);
 			switch (word.szint) {
@@ -45,28 +66,8 @@ export const WordFieldsStatic: fieldBasic[] = [
 			}
 		}
 	},
-	{ name: WordFields.tudasszint, type: FieldTypes.string, size: 2 },
-	{ name: WordFields.szinonimatudasszint, type: FieldTypes.string, size: 2 },
-	{
-		name: WordFields.szo,
-		size: 7,
-		szin: (word) => {
-			switch (word.nevelo) {
-				case WordNevelok.der:
-					return 'bg-gray-400';
-					break;
-				case WordNevelok.die:
-					return 'bg-red-300';
-					break;
-				case WordNevelok.das:
-					return 'bg-yellow-300';
-					break;
-				default:
-					return '';
-			}
-		},
-		type: FieldTypes.string
-	},
+	{ name: WordFields.tudasszint, type: FieldTypes.string, size: 1 },
+	{ name: WordFields.szinonimatudasszint, type: FieldTypes.string, size: 1 },
 	{
 		name: WordFields.magyar,
 		type: FieldTypes.list,

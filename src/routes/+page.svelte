@@ -1,5 +1,6 @@
 <script>
 
+import PageButton from "./pages/layout/comps/PageButton.svelte";
 </script>
 
 <div class="flex flex-col content-center items-center">
@@ -14,3 +15,6 @@
 <h2>Root doc search</h2>
 <h2>New Root doc</h2>
 <h2>Register/login</h2>
+
+<PageButton name="Dictionary" src="pages/dict" />
+<PageButton name="Memotexts" src="pages/memotexts" />

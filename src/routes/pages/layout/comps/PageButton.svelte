@@ -8,7 +8,7 @@
 </script>
 
 <div
-	class="h-full  w-32 cursor-pointer hover:backdrop-brightness-110 flex flex-row justify-center flex-wrap content-center"
+	class="h-16  w-16 cursor-pointer hover:backdrop-brightness-110 flex flex-row justify-center flex-wrap content-center"
 	on:click={openPage(src)}
 >
 	{#if imgsrc}
