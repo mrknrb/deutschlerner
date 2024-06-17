@@ -35,7 +35,7 @@
 
     }}>
 {#each fields as field,i}
-    <td class=" border-gray-400  border-solid border-r-2 " style="position: {fields[i].sticky ? 'sticky' : 'block'};left: {fields[i].sticky ? '0' : '0'};background-color: inherit">
+    <td class=" border-gray-400  border-solid border-r-2 " style="position: {fields[i].sticky ? 'sticky' : 'block'};left: {fields[i].sticky ? '0' : '0'};background-color: inherit;   z-index: {fields[i].sticky ? '50' : '0'}">
 
         {#if word[field.name]!==undefined&&word[field.name]!==null}
 
@@ -53,7 +53,15 @@
 
                 <WordFieldMemoTextPlayer wordData={word} data={word[field.name]}> </WordFieldMemoTextPlayer>
 
-            {/if}
+        {:else if  field.type===FieldTypes.longlist}
+
+            <div class="relative overflow-hidden h-20" style="width: inherit" >
+                <WordFieldList  data={word[field.name]}> </WordFieldList>
+
+            </div>
+
+
+        {/if}
 
 
         {/if}
