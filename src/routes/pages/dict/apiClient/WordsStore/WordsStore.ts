@@ -8,11 +8,13 @@ export type WordsStoreType = {
 	szavak?: Word[];
 	selectedWord?: Word;
 	tudasszintEgyklickNovelo: boolean;
+	szavakCount: number;
 };
 
 let WordsStoreDefault: WordsStoreType = {
 	szavak: [],
-	selectedWord: undefined
+	selectedWord: undefined,
+	szavakCount: 0
 };
 
 export let WordsStore = writable(WordsStoreDefault, () => {
@@ -26,18 +28,22 @@ WordsStore.subscribe((value) => {
 });
 
 let refreshWords = async () => {
-	//  const { data, error } = await supabase.from('szavak').select().    limit(100)
-	console.log(FilterStoreValue);
-	let { data, error } = await supabase.rpc('szoquery', FilterStoreValue);
-
-	console.log(data);
-	console.log(error);
-
-	if (!data) return;
+	//console.log(FilterStoreValue);
+	console.time();
+	let szavakres = await supabase.rpc('szoquery', FilterStoreValue);
+	console.timeEnd();
+	console.time();
+	let countres = await supabase.rpc('szoquerycount', FilterStoreValue);
+	console.timeEnd();
+	//	console.log(szavakres.data);
+	console.error(szavakres.error);
+	//	console.log(countres);
+	console.log(countres.error);
+	if (!szavakres.data) return;
 
 	WordsStore.update((value) => {
-		value.szavak = data;
-
+		value.szavak = szavakres.data;
+		value.szavakCount = countres.data;
 		return value;
 	});
 };

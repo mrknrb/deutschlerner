@@ -90,7 +90,7 @@
 		}}
 	/>
 
-
+<b class="text-xl">{$WordsStore.szavakCount}</b>
 </div>
 
 <div style="flex: 1 1 auto" class=" relative flex flex-row ">

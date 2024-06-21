@@ -21,6 +21,7 @@
             height: 100%;
             "
 		on:click={() => {
+			 event.stopPropagation();
 			showFloatingMenu = false;
 			dispatch('menuClosed');
 		}}

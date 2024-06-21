@@ -16,6 +16,15 @@ export const WordFiltersStatic: FilterStaticType[] = [
 		type: FilterTypeEnums.button
 	},
 	{
+		name: FilterNameEnums.arg_szo,
+		type: FilterTypeEnums.text
+	},
+	{
+		name: FilterNameEnums.arg_szint,
+		type: FilterTypeEnums.dropdown,
+		staticData: ['', '11', '12', '21', '22', '31', '32']
+	},
+	{
 		name: FilterNameEnums.arg_tudasszint,
 		type: FilterTypeEnums.dropdown,
 		staticData: ['', '0', '1', '2', '3', '4']
@@ -24,15 +33,6 @@ export const WordFiltersStatic: FilterStaticType[] = [
 		name: FilterNameEnums.arg_szinonimatudasszint,
 		type: FilterTypeEnums.dropdown,
 		staticData: ['', '0', '1', '2', '3', '4']
-	},
-	{
-		name: FilterNameEnums.arg_szint,
-		type: FilterTypeEnums.dropdown,
-		staticData: ['', '11', '12', '21', '22', '31', '32']
-	},
-	{
-		name: FilterNameEnums.arg_szo,
-		type: FilterTypeEnums.text
 	},
 	{
 		name: FilterNameEnums.arg_szoto,
