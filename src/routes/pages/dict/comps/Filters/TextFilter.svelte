@@ -10,7 +10,7 @@
 </script>
 <div class="flex flex-col w-32">
 
-    <b class="font-bold text-xs">{FilterData.name}</b>
+    <b class="font-bold text-s">{FilterData.name}</b>
     <input
             type="text"
             class="{FilterValue?'bg-green-600':'bg-gray-500'} h-full  text-xl border-4 border-gray-800"
