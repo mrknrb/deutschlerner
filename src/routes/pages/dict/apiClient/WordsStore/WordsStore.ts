@@ -48,6 +48,14 @@ let selectWord = (word: Word) => {
 		return value;
 	});
 };
+let showFloatingMenu = (word: Word) => {
+	WordsStore.update((value) => {
+		value.selectedWord = word;
+
+		return value;
+	});
+};
+
 let refreshOneWord = async (id: string) => {
 	//  const { data, error } = await supabase.from('szavak').select().    limit(100)
 	console.log(FilterStoreValue);

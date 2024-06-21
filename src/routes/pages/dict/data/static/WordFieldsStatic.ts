@@ -92,12 +92,15 @@ export const WordFieldsStatic: fieldBasic[] = [
 		type: FieldTypes.list
 	},
 
+	{ name: WordFields.objects, type: FieldTypes.list, size: 30 },
+
+	{ name: WordFields.prepoziciok, type: FieldTypes.list, size: 30 },
+	{ name: WordFields.modal, type: FieldTypes.list, size: 30 },
 	{
 		name: WordFields.sentences,
 		type: FieldTypes.longlist,
 		size: 30
 	},
-
 	{ name: WordFields.memotext, type: FieldTypes.textplayer, size: 10 },
 	{
 		name: WordFields.kozosszoto,
@@ -105,9 +108,6 @@ export const WordFieldsStatic: fieldBasic[] = [
 		size: 30
 	},
 	{ name: WordFields.ismetlesdatum, type: FieldTypes.string },
-	{ name: WordFields.objects, type: FieldTypes.list, size: 30 },
-	{ name: WordFields.prepoziciok, type: FieldTypes.list, size: 30 },
-	{ name: WordFields.modal, type: FieldTypes.list, size: 30 },
 	{ name: WordFields.attributes, type: FieldTypes.list, size: 30 },
 	{ name: WordFields.nevelo, type: FieldTypes.string },
 

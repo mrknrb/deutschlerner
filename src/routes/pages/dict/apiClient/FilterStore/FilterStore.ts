@@ -3,6 +3,7 @@ import { writable } from 'svelte/store';
 import { MrkLib } from '../../../../../Egyebek/MrkLib';
 
 export type FilterStoreType = {
+	floatingFilterMenuVisible?: boolean;
 	arg_szo?: string;
 	arg_id?: number;
 	arg_szoto?: string;

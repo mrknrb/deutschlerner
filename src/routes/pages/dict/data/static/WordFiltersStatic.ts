@@ -12,13 +12,13 @@ export const WordFiltersStatic: FilterStaticType[] = [
 		type: FilterTypeEnums.button
 	},
 	{
+		name: FilterNameEnums.arg_szinonimafilter,
+		type: FilterTypeEnums.button
+	},
+	{
 		name: FilterNameEnums.arg_tudasszint,
 		type: FilterTypeEnums.dropdown,
 		staticData: ['', '0', '1', '2', '3', '4']
-	},
-	{
-		name: FilterNameEnums.arg_szinonimafilter,
-		type: FilterTypeEnums.button
 	},
 	{
 		name: FilterNameEnums.arg_szinonimatudasszint,

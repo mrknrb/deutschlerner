@@ -55,7 +55,7 @@
 
         {:else if  field.type===FieldTypes.longlist}
 
-            <div class="relative overflow-hidden h-20" style="width: inherit" >
+            <div class="relative overflow-hidden h-20" style="width: inherit " >
                 <WordFieldList  data={word[field.name]}> </WordFieldList>
 
             </div>

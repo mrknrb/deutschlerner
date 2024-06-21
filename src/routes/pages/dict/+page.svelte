@@ -18,10 +18,11 @@
 	import { oiu } from '../../../Egyebek/oiu';
 	import { speech } from '../../../lib/speechObject';
 	import { WordsStoreValue } from './apiClient/WordsStore/WordsStore.js';
-	import {WordsSpeakFunc} from "./apiClient/WordsStore/WordsSpeakFunc.js";
-	import WordContextMenu from "./comps/WordContextMenu.svelte";
-	import TopButton from "./comps/TopButton.svelte";
-	import PageButton from "../layout/comps/PageButton.svelte";
+	import { WordsSpeakFunc } from './apiClient/WordsStore/WordsSpeakFunc.js';
+	import WordContextMenu from './comps/WordContextMenu.svelte';
+	import TopButton from './comps/TopButton.svelte';
+	import PageButton from '../layout/comps/PageButton.svelte';
+	import FloatingFiltersMenu from "./comps/Filters/FloatingFiltersMenu.svelte";
 	let data: any[] = [];
 	onMount(() => {
 		window.addEventListener('popstate', function () {
@@ -30,18 +31,17 @@
 
 		WordsStoreCommands.refreshWordsFromURL();
 	});
-	$: colorTudas=()=> {
-
-		if($WordsStore.tudasszintEgyklickNovelo) {
-			return "bg-green-500"
-		}else {
-			return "bg-red-500"
+	$: colorTudas = () => {
+		if ($WordsStore.tudasszintEgyklickNovelo) {
+			return 'bg-green-500';
+		} else {
+			return 'bg-red-500';
 		}
-	}
+	};
 </script>
-
-<WordContextMenu></WordContextMenu>
-<div style="" class=" relative flex flex-row overflow-x-auto" >
+<FloatingFiltersMenu></FloatingFiltersMenu>
+<WordContextMenu />
+<div style="" class=" relative flex flex-row overflow-x-auto">
 	<!--	<button
 		class="bg-green-300 p-4"
 		on:click={() => {
@@ -49,19 +49,42 @@
 		}}>Refresh</button
 	>-->
 
-	<PageButton imgsrc="/images/logo.png"></PageButton>
+	<PageButton imgsrc="/images/logo.png" />
 	{#each WordFiltersStatic as filter, i}
 		<FilterGenerator
 			FilterData={WordFiltersStatic[i]}
 			FilterValue={oiu.get($FilterStore, WordFiltersStatic[i].name)}
 		/>
 	{/each}
+	<TopButton
+			data={{
+			name: 'Filters',
+			color: 'bg-blue-500',
+			func: () => {
+				FilterStore.update((value) => {
 
-	<TopButton data={{name:"Pause",color:"bg-blue-500",func:() => {
+		value.floatingFilterMenuVisible=true
+		return value;
+	});
+			}
+		}}
+	/>
+
+	<TopButton
+		data={{
+			name: 'Pause',
+			color: 'bg-blue-500',
+			func: () => {
 				speech.cancel();
-			}}}></TopButton>
+			}
+		}}
+	/>
 
-	<TopButton data={{name:"Copy all words",color:"bg-blue-500",func:() => {
+	<TopButton
+		data={{
+			name: 'Copy all words',
+			color: 'bg-blue-500',
+			func: () => {
 				navigator.clipboard.writeText(
 					JSON.stringify(
 						WordsStoreValue.szavak.map((value) => {
@@ -69,27 +92,37 @@
 						})
 					)
 				);
-			}}}></TopButton>
-	<TopButton data={{name:"Mind Felolvas",color:"bg-blue-500",func:() => {
-				WordsSpeakFunc(WordsStoreValue.szavak)
-			}}}></TopButton>
-	<TopButton data={{name:"One Click Tudasszint",color:colorTudas(),func:() => {
+			}
+		}}
+	/>
+	<TopButton
+		data={{
+			name: 'Mind Felolvas',
+			color: 'bg-blue-500',
+			func: () => {
+				WordsSpeakFunc(WordsStoreValue.szavak);
+			}
+		}}
+	/>
+	<TopButton
+		data={{
+			name: 'One Click Tudasszint',
+			color: colorTudas(),
+			func: () => {
+				WordsStore.update((value) => {
+					value.tudasszintEgyklickNovelo = !value.tudasszintEgyklickNovelo;
 
-	WordsStore.update((value) => {
-		value.tudasszintEgyklickNovelo = !value.tudasszintEgyklickNovelo;
+					return value;
+				});
+			}
+		}}
+	/>
 
-		return value;
-	});
-			}}}></TopButton>
-
-
-<input
-
-
-			class="w-24 h-full bg-cyan-500 ml-2 "
-			on:change={(event) => {
-			speech.setRate(event.target.value)
-			}}
+	<input
+		class="w-24 h-full bg-cyan-500 ml-2 "
+		on:change={(event) => {
+			speech.setRate(event.target.value);
+		}}
 	/>
 </div>
 
