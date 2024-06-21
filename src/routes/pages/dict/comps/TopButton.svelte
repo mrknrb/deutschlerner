@@ -9,6 +9,6 @@
 <input
         value={data.name}
         type="button"
-        class="w-32 h-full {data.color} ml-2 rounded hoverClick"
+        class="w-32 p-2 {data.color} ml-2 rounded hoverClick"
         on:click={data.func}
 />

@@ -50,12 +50,7 @@
 	>-->
 
 	<PageButton imgsrc="/images/logo.png" />
-	{#each WordFiltersStatic as filter, i}
-		<FilterGenerator
-			FilterData={WordFiltersStatic[i]}
-			FilterValue={oiu.get($FilterStore, WordFiltersStatic[i].name)}
-		/>
-	{/each}
+
 	<TopButton
 			data={{
 			name: 'Filters',
@@ -80,30 +75,7 @@
 		}}
 	/>
 
-	<TopButton
-		data={{
-			name: 'Copy all words',
-			color: 'bg-blue-500',
-			func: () => {
-				navigator.clipboard.writeText(
-					JSON.stringify(
-						WordsStoreValue.szavak.map((value) => {
-							return value.szo;
-						})
-					)
-				);
-			}
-		}}
-	/>
-	<TopButton
-		data={{
-			name: 'Mind Felolvas',
-			color: 'bg-blue-500',
-			func: () => {
-				WordsSpeakFunc(WordsStoreValue.szavak);
-			}
-		}}
-	/>
+
 	<TopButton
 		data={{
 			name: 'One Click Tudasszint',
@@ -118,12 +90,7 @@
 		}}
 	/>
 
-	<input
-		class="w-24 h-full bg-cyan-500 ml-2 "
-		on:change={(event) => {
-			speech.setRate(event.target.value);
-		}}
-	/>
+
 </div>
 
 <div style="flex: 1 1 auto" class=" relative flex flex-row ">
