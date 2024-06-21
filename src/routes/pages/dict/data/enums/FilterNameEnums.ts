@@ -4,8 +4,9 @@ export enum FilterNameEnums {
 	arg_szoto = 'arg_szoto',
 	arg_idszinonimai = 'arg_idszinonimai',
 	arg_tudasszint = 'arg_tudasszint',
-	arg_szogyujtes = 'arg_szogyujtes',
 	arg_szint = 'arg_szint',
 	arg_szinonimatudasszint = 'arg_szinonimatudasszint',
-	arg_szinonimafilter = 'arg_szinonimafilter'
+	arg_szinonimaknelkul = 'arg_szinonimaknelkul',
+	arg_limit = 'arg_limit',
+	arg_offset = 'arg_offset'
 }

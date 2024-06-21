@@ -22,7 +22,7 @@
 	import WordContextMenu from './comps/WordContextMenu.svelte';
 	import TopButton from './comps/TopButton.svelte';
 	import PageButton from '../layout/comps/PageButton.svelte';
-	import FloatingFiltersMenu from "./comps/Filters/FloatingFiltersMenu.svelte";
+	import FloatingFiltersMenu from './comps/Filters/FloatingFiltersMenu.svelte';
 	let data: any[] = [];
 	onMount(() => {
 		window.addEventListener('popstate', function () {
@@ -39,7 +39,8 @@
 		}
 	};
 </script>
-<FloatingFiltersMenu></FloatingFiltersMenu>
+
+<FloatingFiltersMenu />
 <WordContextMenu />
 <div style="" class=" relative flex flex-row overflow-x-auto">
 	<!--	<button
@@ -52,15 +53,14 @@
 	<PageButton imgsrc="/images/logo.png" />
 
 	<TopButton
-			data={{
+		data={{
 			name: 'Filters',
 			color: 'bg-blue-500',
 			func: () => {
 				FilterStore.update((value) => {
-
-		value.floatingFilterMenuVisible=true
-		return value;
-	});
+					value.floatingFilterMenuVisible = true;
+					return value;
+				});
 			}
 		}}
 	/>
@@ -74,7 +74,6 @@
 			}
 		}}
 	/>
-
 
 	<TopButton
 		data={{
@@ -90,7 +89,38 @@
 		}}
 	/>
 
-<b class="text-xl">{$WordsStore.szavakCount}</b>
+	<TopButton
+		data={{
+			name: 'Offset -',
+			color: 'bg-blue-500',
+			func: () => {
+				console.log(FilterStoreValue);
+				let offset = Number($FilterStore.arg_offset) - Number($FilterStore.arg_limit);
+				if (offset >= 0) {
+					FilterStoreCommands.offsetUpdate(offset);
+				} else {
+					FilterStoreCommands.offsetUpdate(0);
+				}
+			}
+		}}
+	/>
+	<TopButton
+		data={{
+			name: 'Offset +',
+			color: 'bg-blue-500',
+			func: () => {
+				console.log(FilterStoreValue);
+				let offset = Number($FilterStore.arg_offset) + Number($FilterStore.arg_limit);
+				if (offset >= 0) {
+					FilterStoreCommands.offsetUpdate(offset);
+				} else {
+					FilterStoreCommands.offsetUpdate(0);
+				}
+			}
+		}}
+	/>
+	<b class="text-xl">{$FilterStore.arg_offset}</b> /
+	<b class="text-xl">{$WordsStore.szavakCount}</b>
 </div>
 
 <div style="flex: 1 1 auto" class=" relative flex flex-row ">

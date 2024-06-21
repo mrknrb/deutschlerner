@@ -21,7 +21,7 @@
 
 
 </script>
-<tr class="bg-gray-300 h-10  border-gray-600 border-solid border-4 align-top border-l-0"on:click={(e)=>{
+<tr class="bg-gray-300 h-10  border-gray-600  border-b-4 align-top border-l-0  "on:click={(e)=>{
     if($WordsStore.tudasszintEgyklickNovelo){
        let funcObject= WordActions.find(value => {return value.name==="tudasszintNoveles"})
        funcObject.func(word)
@@ -35,7 +35,7 @@
 
     }}>
 {#each fields as field,i}
-    <td class=" border-gray-400  border-solid border-r-2 " style="position: {fields[i].sticky ? 'sticky' : 'block'};left: {fields[i].sticky ? '0' : '0'};background-color: inherit;   z-index: {fields[i].sticky ? '50' : '0'}">
+    <td class="   " style="position: {fields[i].sticky ? 'sticky' : 'block'};left: {fields[i].sticky ? '0' : '0'};background-color: inherit;   z-index: {fields[i].sticky ? '50' : '0'}">
 
         {#if word[field.name]!==undefined&&word[field.name]!==null}
 

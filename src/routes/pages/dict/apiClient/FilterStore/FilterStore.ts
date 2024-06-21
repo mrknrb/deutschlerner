@@ -1,6 +1,8 @@
 import queryString from 'query-string';
 import { writable } from 'svelte/store';
 import { MrkLib } from '../../../../../Egyebek/MrkLib';
+import { oiu } from '../../../../../Egyebek/oiu';
+import { FilterNameEnums } from '../../data/enums/FilterNameEnums';
 
 export type FilterStoreType = {
 	floatingFilterMenuVisible?: boolean;
@@ -9,9 +11,13 @@ export type FilterStoreType = {
 	arg_szoto?: string;
 	arg_idszinonimai?: string;
 	arg_tanulando?: boolean;
+	arg_limit?: number;
+	arg_offset?: number;
 };
-
-let FilterStoreDefault: FilterStoreType = {};
+let FilterStoreDefault: FilterStoreType = {
+	arg_limit: 50,
+	arg_offset: 0
+};
 
 export let FilterStoreValue: FilterStoreType;
 export let FilterStore = writable(FilterStoreDefault, () => {
@@ -36,13 +42,23 @@ let getURL = () => {
 };
 let updateFilterFromURL = () => {
 	FilterStore.update((value) => {
-		value = getURL();
-		return value;
+		let urlvalue = getURL();
+
+		return MrkLib.mergeObjects(value, urlvalue);
+	});
+};
+let offsetUpdate = (offset: number) => {
+	FilterStoreCommands.updateURL((old) => {
+		//oiu.set(	old,filterName,filterTextValue)
+		//let a = oiu.create();
+		oiu.set(old, FilterNameEnums.arg_offset, offset);
+		return old;
 	});
 };
 
 export let FilterStoreCommands = {
 	updateURL,
 	getURL,
-	updateFilterFromURL
+	updateFilterFromURL,
+	offsetUpdate
 };
