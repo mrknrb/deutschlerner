@@ -23,6 +23,8 @@
 	import TopButton from './comps/TopButton.svelte';
 	import PageButton from '../layout/comps/PageButton.svelte';
 	import FloatingFiltersMenu from './comps/Filters/FloatingFiltersMenu.svelte';
+	import FloatingWordGroupMenu from "./comps/WordGroups/FloatingWordGroupMenu.svelte";
+	import {WordGroupStore} from "./apiClient/WordGroupStore/WordGroupStore";
 	let data: any[] = [];
 	onMount(() => {
 		window.addEventListener('popstate', function () {
@@ -42,6 +44,7 @@
 
 <FloatingFiltersMenu />
 <WordContextMenu />
+<FloatingWordGroupMenu></FloatingWordGroupMenu>
 <div style="" class=" relative flex flex-row overflow-x-auto">
 	<!--	<button
 		class="bg-green-300 p-4"
@@ -64,7 +67,18 @@
 			}
 		}}
 	/>
-
+	<TopButton
+			data={{
+			name: 'WordGroups',
+			color: 'bg-blue-500',
+			func: () => {
+				WordGroupStore.update((value) => {
+					value.wordGroupFloatingMenuVisible = true;
+					return value;
+				});
+			}
+		}}
+	/>
 	<TopButton
 		data={{
 			name: 'Pause',
