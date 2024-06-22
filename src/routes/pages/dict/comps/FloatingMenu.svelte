@@ -26,11 +26,11 @@
 			dispatch('menuClosed');
 		}}
 	>
-		<div
+		<div class="p-2"
 			style=" position: absolute;
             background-color: #fff;
             box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-left: 0px;right: 0px;top:0px;bottom: 50px;overflow: auto;
+left: 0px;right: 30px;top:0px;bottom: 50px;overflow: auto;
             "
 		on:click={(event)=>{
            event.stopPropagation();
